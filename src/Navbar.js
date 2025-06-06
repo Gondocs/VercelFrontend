@@ -1,5 +1,6 @@
 // Navbar.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 
 function Navbar() {
@@ -16,9 +17,9 @@ function Navbar() {
         <span style={{ color: '#61dafb', fontWeight: 'bold', fontSize: 22 }}>MyApp</span>
       </div>
       <div>
-        <a href="#" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Home</a>
-        <a href="#" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>About</a>
-        <a href="#" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Contact</a>
+        <Link to="/" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Home</Link>
+        <Link to="/about" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>About</Link>
+        <Link to="/contact" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Contact</Link>
       </div>
     </nav>
   );
