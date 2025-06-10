@@ -6,6 +6,9 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  min-height: 80vh;
+  background: #f7fafd;
+  padding: 2rem 0;
 }
 .main-about h1 {
   color: #282c34;
@@ -29,4 +32,135 @@
   padding: 16px;
   border-radius: 8px;
   flex: 1;
+}
+.about-bio {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  font-size: 1.1rem;
+  color: #333;
+}
+.about-skills {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #eaf6ff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.about-skills h2 {
+  margin-top: 0;
+  color: #0078d7;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.skills-list li {
+  background: #fff;
+  border: 1px solid #cce4ff;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  color: #2d3a4b;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.about-variants {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Card Style */
+.about-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 2rem;
+  border: none;
+}
+.about-card h2 {
+  color: #0078d7;
+}
+
+/* Bordered Style */
+.about-bordered {
+  border: 3px solid #222;
+  border-radius: 14px;
+  padding: 2rem;
+  background: #fafbfc;
+}
+.about-bordered h2 {
+  color: #222;
+}
+
+/* Dark Style */
+.about-dark {
+  background: #222831;
+  color: #fff;
+  border-radius: 14px;
+  padding: 2rem;
+}
+.about-dark h2 {
+  color: #61dafb;
+}
+
+/* Minimalist Style */
+.about-minimal {
+  border-bottom: 2px solid #0078d7;
+  padding: 2rem 0 1rem 0;
+  background: none;
+  box-shadow: none;
+}
+.about-minimal h2 {
+  color: #0078d7;
+}
+
+/* Gradient Style */
+.about-gradient {
+  background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.about-gradient h2 {
+  color: #2d3a4b;
+}
+
+.about-card ul,
+.about-bordered ul,
+.about-dark ul,
+.about-minimal ul,
+.about-gradient ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.about-card li,
+.about-bordered li,
+.about-dark li,
+.about-minimal li,
+.about-gradient li {
+  background: #f0f4fa;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  color: #2d3a4b;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.about-dark li {
+  background: #393e46;
+  color: #fff;
 }

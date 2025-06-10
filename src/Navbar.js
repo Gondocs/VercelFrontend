@@ -19,6 +19,8 @@ function Navbar() {
       <div>
         <Link to="/" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Home</Link>
         <Link to="/about" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>About</Link>
+        <Link to="/projects" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Projects</Link>
+        <Link to="/experience" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Experience</Link>
         <Link to="/contact" style={{ color: '#fff', margin: '0 1rem', textDecoration: 'none' }}>Contact</Link>
       </div>
     </nav>
