@@ -9,7 +9,7 @@ function Navbar() {
     // Only highlight nav link for section currently in view
     const sectionIds = ["home", "about", "projects", "experience", "contact"];
     function handleScroll() {
-      const scrollPos = window.scrollY - 100;
+      const scrollPos = window.scrollY + 200;
       let found = false;
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const id = sectionIds[i];
@@ -33,7 +33,7 @@ function Navbar() {
       <ScrollLink
         to="home"
         smooth={true}
-        offset={-20}
+        offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold${
@@ -45,7 +45,7 @@ function Navbar() {
       <ScrollLink
         to="about"
         smooth={true}
-        offset={-20}
+        offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold${
@@ -57,7 +57,7 @@ function Navbar() {
       <ScrollLink
         to="projects"
         smooth={true}
-        offset={-20}
+        offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold${
@@ -69,7 +69,7 @@ function Navbar() {
       <ScrollLink
         to="experience"
         smooth={true}
-        offset={-20}
+        offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold${
@@ -81,7 +81,7 @@ function Navbar() {
       <ScrollLink
         to="contact"
         smooth={true}
-        offset={-20}
+        offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold${
