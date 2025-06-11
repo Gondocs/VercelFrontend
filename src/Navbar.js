@@ -1,9 +1,12 @@
 // Navbar.js
 import React, { useEffect, useState } from "react";
 import { Link as ScrollLink, animateScroll } from "react-scroll";
+import { slide as Menu } from "react-burger-menu";
+import { useMediaQuery } from "react-responsive";
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
+  const isMobile = useMediaQuery({ maxWidth: 810 });
 
   useEffect(() => {
     // Only highlight nav link for section currently in view
@@ -94,15 +97,25 @@ function Navbar() {
   );
 
   return (
-    <nav className="flex items-center justify-between px-10 py-2 bg-black shadow-lg border-b-2 border-white sticky top-0 z-50 border-b-2">
-      <a href="#home" className="flex-shrink-0 ml-20">
+    <nav className="flex items-center justify-between px-10 py-2 bg-black shadow-lg border-b-2 border-white sticky top-0 z-50">
+      <a href="#home" className="flex-shrink-0">
         <img
           src="/GR_logo.png"
           alt="Logo"
-          style={{ height: "80px", width: "auto", marginLeft: "30px" }}
+          style={{ height: "80px", width: "auto" }}
         />
       </a>
-      <div className="flex space-x-8">{navLinks}</div>
+      {isMobile ? (
+        <Menu right width={220} burgerButtonClassName="bm-burger-button">
+          <div className="flex flex-col space-y-6 mt-10">
+            {React.Children.map(navLinks.props.children, (child) =>
+              React.cloneElement(child, { className: "text-white text-xl font-bold px-4 py-2" })
+            )}
+          </div>
+        </Menu>
+      ) : (
+        <div className="flex space-x-8">{navLinks}</div>
+      )}
     </nav>
   );
 }
