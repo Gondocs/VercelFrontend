@@ -13,26 +13,23 @@
     left: 50%;
     right: 50%;
     bottom: 0;
-    width: 0;
     height: 2px;
     background: white;
     opacity: 0;
     transition: left 0.3s cubic-bezier(0.4,0,0.2,1), right 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s cubic-bezier(0.4,0,0.2,1);
+    pointer-events: none;
   }
+  .nav-underline.active::after,
   .nav-underline:hover::after,
   .nav-underline:focus::after {
     left: 0;
     right: 0;
-    width: auto;
     opacity: 1;
-    transition: left 0.3s cubic-bezier(0.4,0,0.2,1), right 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s cubic-bezier(0.4,0,0.2,1);
   }
-  .nav-underline:not(:hover):not(:focus)::after {
+  .nav-underline:not(.active):not(:hover):not(:focus)::after {
     left: 50%;
     right: 50%;
-    width: 0;
     opacity: 0;
-    transition: left 0.3s cubic-bezier(0.4,0,0.2,1), right 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s cubic-bezier(0.4,0,0.2,1);
   }
 }
 
