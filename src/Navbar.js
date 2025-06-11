@@ -1,5 +1,6 @@
 // Navbar.js
 import React, { useEffect, useState } from 'react';
+import { Link as ScrollLink, animateScroll } from 'react-scroll';
 
 function Navbar({ isMobile }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,11 +31,11 @@ function Navbar({ isMobile }) {
 
   const navLinks = (
     <>
-      <a href="#home" className={`nav-underline text-white text-xl font-bold${activeSection==='home' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Home</a>
-      <a href="#about" className={`nav-underline text-white text-xl font-bold${activeSection==='about' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>About</a>
-      <a href="#projects" className={`nav-underline text-white text-xl font-bold${activeSection==='projects' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Projects</a>
-      <a href="#experience" className={`nav-underline text-white text-xl font-bold${activeSection==='experience' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Experience</a>
-      <a href="#contact" className={`nav-underline text-white text-xl font-bold${activeSection==='contact' ? ' active' : ''}`} onClick={() => setMenuOpen(false)}>Contact</a>
+      <ScrollLink to="home" smooth={true} offset={-80} duration={600} spy={true} onClick={() => setMenuOpen(false)} className={`nav-underline text-white text-xl font-bold${activeSection==='home' ? ' active' : ''}`}>Home</ScrollLink>
+      <ScrollLink to="about" smooth={true} offset={-80} duration={600} spy={true} onClick={() => setMenuOpen(false)} className={`nav-underline text-white text-xl font-bold${activeSection==='about' ? ' active' : ''}`}>About</ScrollLink>
+      <ScrollLink to="projects" smooth={true} offset={-80} duration={600} spy={true} onClick={() => setMenuOpen(false)} className={`nav-underline text-white text-xl font-bold${activeSection==='projects' ? ' active' : ''}`}>Projects</ScrollLink>
+      <ScrollLink to="experience" smooth={true} offset={-80} duration={600} spy={true} onClick={() => setMenuOpen(false)} className={`nav-underline text-white text-xl font-bold${activeSection==='experience' ? ' active' : ''}`}>Experience</ScrollLink>
+      <ScrollLink to="contact" smooth={true} offset={-80} duration={600} spy={true} onClick={() => setMenuOpen(false)} className={`nav-underline text-white text-xl font-bold${activeSection==='contact' ? ' active' : ''}`}>Contact</ScrollLink>
     </>
   );
 
