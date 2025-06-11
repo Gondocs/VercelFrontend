@@ -3,18 +3,18 @@ import useScrollAnimations from '../useScrollAnimations';
 
 const projects = [
   {
-    title: 'Personal Portfolio Website',
-    desc: 'A modern, responsive portfolio built with React and styled-components. Showcases my skills, projects, and contact info.',
+    title: 'Személyes Portfólió Weboldal',
+    desc: 'Egy modern, reszponzív portfólió, React és styled-components segítségével. Bemutatja a készségeimet, projektjeimet és elérhetőségeimet.',
     link: '#',
   },
   {
-    title: 'Task Manager App',
-    desc: 'Full-stack MERN app for managing daily tasks, with authentication and real-time updates.',
+    title: 'Feladatkezelő Alkalmazás',
+    desc: 'Teljes körű MERN alkalmazás a napi feladatok kezelésére, hitelesítéssel és valós idejű frissítésekkel.',
     link: '#',
   },
   {
-    title: 'API Integration Demo',
-    desc: 'React app demonstrating integration with third-party APIs and dynamic data visualization.',
+    title: 'API Integrációs Bemutató',
+    desc: 'React alkalmazás, amely bemutatja a harmadik féltől származó API-k integrációját és a dinamikus adatok vizualizációját.',
     link: '#',
   },
 ];
@@ -22,18 +22,26 @@ const projects = [
 export default function Projects() {
   useScrollAnimations();
   return (
-    <main className="py-8">
-      <section className="w-[75%] max-w-4xl mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up">
-        <h2 className="text-2xl font-bold text-white mb-4 animate-slide-in-left">Card Style</h2>
-        <div>
-          {projects.map(p => (
-            <div key={p.title} className="bg-black text-white rounded-lg shadow-md my-4 p-6 animate-slide-in-up">
-              <h3 className="text-xl font-bold text-white animate-slide-in-left">{p.title}</h3>
-              <p className="text-white animate-slide-in-right">{p.desc}</p>
-              <a href={p.link} className="text-white underline animate-slide-in-up">View Project</a>
-            </div>
-          ))}
+    <main className="py-16">
+        
+      {/* Példa magyar projektek listára */}
+      <section className="w-[75%] max-w-4xl mx-auto bg-black">
+        <h1 className="text-3xl font-bold text-[#ffffff] mb-6 animate-slide-in-left">Projektek</h1>
+        <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
+          <h2 className="text-xl font-bold text-white animate-slide-in-left">Webshop alkalmazás</h2>
+          <p className="text-white mb-2 animate-slide-in-right">React, Node.js, MongoDB</p>
+          <ul className="list-disc ml-6">
+            <li className="animate-slide-in-up">Teljes körű webáruház fejlesztése Reacttel.</li>
+            <li className="animate-slide-in-up">Felhasználói fiókok, kosár, fizetés integráció.</li>
+          </ul>
         </div>
+        {projects.map(p => (
+          <div key={p.title} className="bg-black text-white rounded-lg shadow-md my-4 p-6 animate-slide-in-up">
+            <h3 className="text-xl font-bold text-white animate-slide-in-left">{p.title}</h3>
+            <p className="text-white animate-slide-in-right">{p.desc}</p>
+            <a href={p.link} className="text-white underline animate-slide-in-up">Projekt megtekintése</a>
+          </div>
+        ))}
       </section>
     </main>
   );

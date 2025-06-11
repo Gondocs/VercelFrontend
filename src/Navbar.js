@@ -43,7 +43,7 @@ function Navbar() {
           activeSection === "home" ? " active" : ""
         }`}
       >
-        Home
+        Kezdőlap
       </ScrollLink>
       <ScrollLink
         to="about"
@@ -55,7 +55,7 @@ function Navbar() {
           activeSection === "about" ? " active" : ""
         }`}
       >
-        About
+        Rólam
       </ScrollLink>
       <ScrollLink
         to="projects"
@@ -67,7 +67,7 @@ function Navbar() {
           activeSection === "projects" ? " active" : ""
         }`}
       >
-        Projects
+        Projektek
       </ScrollLink>
       <ScrollLink
         to="experience"
@@ -79,7 +79,7 @@ function Navbar() {
           activeSection === "experience" ? " active" : ""
         }`}
       >
-        Experience
+        Tapasztalat
       </ScrollLink>
       <ScrollLink
         to="contact"
@@ -91,14 +91,14 @@ function Navbar() {
           activeSection === "contact" ? " active" : ""
         }`}
       >
-        Contact
+        Kapcsolat
       </ScrollLink>
     </>
   );
 
   return (
     <nav className="flex items-center justify-between px-10 py-2 bg-black shadow-lg border-b-2 border-white sticky top-0 z-50">
-      <a href="#home" className="flex-shrink-0 pl-16">
+      <a href="#home" className={`flex-shrink-0${!isMobile ? ' pl-16' : ''}`}>
         <img
           src="/GR_logo.webp"
           alt="Logo"
@@ -116,7 +116,7 @@ function Navbar() {
             className="menu-item cursor-pointer"
             onClick={() => document.querySelector(".bm-cross-button")?.click()}
           >
-            Home
+            Kezdőlap
           </ScrollLink>
           <ScrollLink
             to="about"
@@ -127,7 +127,7 @@ function Navbar() {
             className="menu-item cursor-pointer"
             onClick={() => document.querySelector(".bm-cross-button")?.click()}
           >
-            About
+            Rólam
           </ScrollLink>
           <ScrollLink
             to="projects"
@@ -138,7 +138,7 @@ function Navbar() {
             className="menu-item cursor-pointer"
             onClick={() => document.querySelector(".bm-cross-button")?.click()}
           >
-            Projects
+            Projektek
           </ScrollLink>
           <ScrollLink
             to="experience"
@@ -149,7 +149,7 @@ function Navbar() {
             className="menu-item cursor-pointer"
             onClick={() => document.querySelector(".bm-cross-button")?.click()}
           >
-            Experience
+            Tapasztalat
           </ScrollLink>
           <ScrollLink
             to="contact"
@@ -160,7 +160,7 @@ function Navbar() {
             className="menu-item cursor-pointer"
             onClick={() => document.querySelector(".bm-cross-button")?.click()}
           >
-            Contact
+            Kapcsolat
           </ScrollLink>
         </Menu>
       ) : (
