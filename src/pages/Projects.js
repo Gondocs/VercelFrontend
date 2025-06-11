@@ -1,4 +1,5 @@
 import React from 'react';
+import useScrollAnimations from '../useScrollAnimations';
 
 const projects = [
   {
@@ -19,16 +20,17 @@ const projects = [
 ];
 
 export default function Projects() {
+  useScrollAnimations();
   return (
     <main className="py-8">
-      <section className="w-[75%] max-w-4xl mx-auto bg-black rounded-xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-white mb-4">Card Style</h2>
+      <section className="w-[75%] max-w-4xl mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up">
+        <h2 className="text-2xl font-bold text-white mb-4 animate-slide-in-left">Card Style</h2>
         <div>
           {projects.map(p => (
-            <div key={p.title} className="bg-black text-white rounded-lg shadow-md my-4 p-6">
-              <h3 className="text-xl font-bold text-white">{p.title}</h3>
-              <p className="text-white">{p.desc}</p>
-              <a href={p.link} className="text-white underline">View Project</a>
+            <div key={p.title} className="bg-black text-white rounded-lg shadow-md my-4 p-6 animate-slide-in-up">
+              <h3 className="text-xl font-bold text-white animate-slide-in-left">{p.title}</h3>
+              <p className="text-white animate-slide-in-right">{p.desc}</p>
+              <a href={p.link} className="text-white underline animate-slide-in-up">View Project</a>
             </div>
           ))}
         </div>

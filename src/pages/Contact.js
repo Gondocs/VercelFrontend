@@ -1,4 +1,5 @@
 import React from 'react';
+import useScrollAnimations from '../useScrollAnimations';
 
 const contactInfo = {
   email: 'john.doe@email.com',
@@ -28,15 +29,16 @@ function ContactLinks({ className }) {
 }
 
 export default function Contact() {
+  useScrollAnimations();
   return (
     <main className="py-8">
-      <section className="w-[75%] max-w-4xl mx-auto bg-black rounded-xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-white mb-2">Minimalist Style</h2>
-        <p className="text-white mb-4">
-          Contact me at <a href={`mailto:${contactInfo.email}`} className="text-white underline">{contactInfo.email}</a>
+      <section className="w-[75%] max-w-4xl mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up">
+        <h2 className="text-2xl font-bold text-white mb-2 animate-slide-in-left">Minimalist Style</h2>
+        <p className="text-white mb-4 animate-slide-in-right">
+          Contact me at <a href={`mailto:${contactInfo.email}`} className="text-white underline animate-slide-in-up">{contactInfo.email}</a>
         </p>
-        <ContactForm />
-        <ContactLinks />
+        <ContactForm className="animate-slide-in-up" />
+        <ContactLinks className="animate-slide-in-up" />
       </section>
     </main>
   );
