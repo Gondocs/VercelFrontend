@@ -6,15 +6,12 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
-import Tester from "./pages/test";
 
 export default function App() {
   return (
-    <div className="bg-[#202124] min-h-screen text-[#e0e0e0] transition-colors duration-500">
+    <div className="bg-black min-h-screen text-white transition-colors duration-500">
       <Navbar />
-      <div id="test">
-        <Tester />
-      </div>
+
       <div id="home">
         <Home />
       </div>

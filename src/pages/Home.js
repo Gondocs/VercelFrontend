@@ -9,17 +9,17 @@ const profile = {
 
 export default function Home() {
   return (
-    <main className="py-8">
-      <section className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 mb-8">
-        <h1 className="text-3xl font-bold text-[#61dafb] mb-2">Üdvözöllek a személyes oldalamon!</h1>
-        <p className="text-lg text-[#b0b0b0]">Fedezd fel a munkáimat és tapasztalataimat.</p>
+    <main className="py-12 bg-gradient-to-b from-black to-black min-h-screen">
+      <section className="w-[75%] max-w-5xl mx-auto bg-black rounded-2xl shadow-2xl p-10 mb-10 border border-black">
+        <h1 className="text-4xl font-extrabold text-white mb-3 text-center drop-shadow-lg">Üdvözöllek a személyes oldalamon!</h1>
+        <p className="text-xl text-white text-center mb-2">Fedezd fel a munkáimat és tapasztalataimat.</p>
       </section>
-      <section className="max-w-2xl mx-auto bg-[#23272a] rounded-xl shadow-lg p-8 flex items-center gap-8">
-        <img src={profile.image} alt="Profile" className="w-32 h-32 rounded-full shadow-lg bg-[#181a1b] object-cover" />
-        <div>
-          <h3 className="text-2xl font-bold text-[#61dafb]">{profile.name}</h3>
-          <h4 className="text-lg text-[#e0e0e0]">{profile.title}</h4>
-          <p className="text-[#b0b0b0]">{profile.description}</p>
+      <section className="w-[75%] max-w-5xl mx-auto bg-black rounded-2xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-10 border border-black">
+        <img src={profile.image} alt="Profile" className="w-56 h-56 rounded-full shadow-2xl border-4 border-black object-cover bg-black transition-transform duration-300 hover:scale-105" />
+        <div className="flex-1 text-center md:text-left">
+          <h3 className="text-3xl font-extrabold text-white mb-2 drop-shadow">{profile.name}</h3>
+          <h4 className="text-xl text-white mb-2 font-semibold">{profile.title}</h4>
+          <p className="text-lg text-white leading-relaxed">{profile.description}</p>
         </div>
       </section>
     </main>

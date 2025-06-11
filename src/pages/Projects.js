@@ -21,14 +21,14 @@ const projects = [
 export default function Projects() {
   return (
     <main className="py-8">
-      <section className="max-w-2xl mx-auto bg-[#23272a] rounded-xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-[#61dafb] mb-4">Card Style</h2>
+      <section className="w-[75%] max-w-4xl mx-auto bg-black rounded-xl shadow-lg p-8">
+        <h2 className="text-2xl font-bold text-white mb-4">Card Style</h2>
         <div>
           {projects.map(p => (
-            <div key={p.title} className="bg-[#181a1b] text-[#e0e0e0] rounded-lg shadow-md my-4 p-6">
-              <h3 className="text-xl font-bold text-[#61dafb]">{p.title}</h3>
-              <p className="text-[#b0b0b0]">{p.desc}</p>
-              <a href={p.link} className="text-[#61dafb] underline">View Project</a>
+            <div key={p.title} className="bg-black text-white rounded-lg shadow-md my-4 p-6">
+              <h3 className="text-xl font-bold text-white">{p.title}</h3>
+              <p className="text-white">{p.desc}</p>
+              <a href={p.link} className="text-white underline">View Project</a>
             </div>
           ))}
         </div>
