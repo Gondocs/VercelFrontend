@@ -98,9 +98,9 @@ function Navbar() {
 
   return (
     <nav className="flex items-center justify-between px-10 py-2 bg-black shadow-lg border-b-2 border-white sticky top-0 z-50">
-      <a href="#home" className="flex-shrink-0">
+      <a href="#home" className="flex-shrink-0 pl-16">
         <img
-          src="/GR_logo.png"
+          src="/GR_logo.webp"
           alt="Logo"
           style={{ height: "80px", width: "auto" }}
         />
@@ -164,7 +164,7 @@ function Navbar() {
           </ScrollLink>
         </Menu>
       ) : (
-        <div className="flex space-x-8">{navLinks}</div>
+        <div className="flex space-x-8 pr-16">{navLinks}</div>
       )}
     </nav>
   );

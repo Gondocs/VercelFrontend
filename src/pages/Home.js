@@ -5,7 +5,7 @@ const profile = {
   name: 'Göndöcs Róbert',
   title: 'Web- és szoftverfejlesztő & UI/UX tervező',
   description: 'Szenvedélyesen építek gyönyörű, akadálymentes és nagy teljesítményű webalkalmazásokat. Tapasztalt vagyok React, JavaScript és modern webes technológiák terén.',
-  image: 'profilkep_CV.jpg',
+  image: 'profilkep_CV.webp',
 };
 
 export default function Home() {
