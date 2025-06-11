@@ -6,40 +6,24 @@ function Navbar({ isMobile }) {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    // Smooth scroll for anchor links
-    const handleClick = e => {
-      if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
-        const id = e.target.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-          e.preventDefault();
-          setMenuOpen(false); // close menu on link click
-          window.scrollTo({
-            top: el.getBoundingClientRect().top + window.scrollY - 80,
-            behavior: 'smooth',
-          });
-        }
-      }
-    };
-    document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
-  }, []);
-
-  useEffect(() => {
-    // Highlight nav link for current section
+    // Only highlight nav link for section currently in view
     const sectionIds = ['home', 'about', 'projects', 'experience', 'contact'];
-    const handleScroll = () => {
+    function handleScroll() {
       const scrollPos = window.scrollY + 100;
-      let current = 'home';
-      for (const id of sectionIds) {
+      let found = false;
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollPos) {
-          current = id;
+        if (el && scrollPos >= el.offsetTop) {
+          setActiveSection(id);
+          found = true;
+          break;
         }
       }
-      setActiveSection(current);
-    };
-    window.addEventListener('scroll', handleScroll);
+      if (!found) setActiveSection('');
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial check
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
