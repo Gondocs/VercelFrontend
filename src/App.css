@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #202124 !important;
+  color: #e0e0e0 !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -29,10 +29,9 @@
 }
 
 /* Add more design to the homepage and navbar */
-body {
-  background: linear-gradient(135deg, #e9ecef 60%, #b2f0e6 100%);
-  min-height: 100vh;
-  font-family: 'Segoe UI', Arial, sans-serif;
+body, html {
+  background: #202124 !important;
+  color: #e0e0e0 !important;
 }
 
 .App {
@@ -61,6 +60,76 @@ ul li {
 ul li:hover {
   box-shadow: 0 4px 24px #61dafb33;
   transform: scale(1.03);
+}
+
+.navbar-dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #23272a;
+  box-shadow: 0 2px 8px #000a;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  color: #61dafb;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.navbar-links a {
+  color: #e0e0e0;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #61dafb;
+  border-bottom: 2px solid #61dafb;
+}
+
+main, .main-home, .main-about, .main-projects, .main-experience, .main-contact, .profile-card, .about-card, .projects-card, .contact-minimal, .contact-form, .contact-links, .experience-item, .project-card, form {
+  background: #202124 !important;
+  color: #e0e0e0 !important;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+section {
+  margin-bottom: 2rem;
+  background: transparent !important;
+}
+
+/* Buttons, inputs, and links */
+button, input, textarea {
+  background: #23272a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+}
+button:hover, input:focus, textarea:focus {
+  border-color: #61dafb;
+  outline: none;
+}
+
+input, textarea {
+  background: #181a1b !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #444;
+}
+
+/* Remove card-like borders and shadows for seamless look */
+
+a {
+  color: #61dafb;
 }
 
 @keyframes App-logo-spin {

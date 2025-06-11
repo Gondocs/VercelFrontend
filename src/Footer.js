@@ -8,7 +8,6 @@ function Footer() {
       color: '#fff',
       textAlign: 'center',
       padding: '1.5rem 0',
-      marginTop: '3rem',
       borderTop: '4px solid #61dafb',
       boxShadow: '0 -2px 16px rgba(0,0,0,0.06)'
     }}>

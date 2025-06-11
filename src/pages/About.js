@@ -15,50 +15,14 @@ const about = {
 
 export default function About() {
   return (
-    <main className="main-about">
-      <h1 style={{textAlign: 'center', marginBottom: '2rem'}}>Choose Your Favorite About Design</h1>
-      <div className="about-variants">
-        {/* Card Style */}
-        <section className="about-card">
-          <h2>Card Style</h2>
-          <p>{about.bio}</p>
+    <main className="main-about dark-section">
+        <section className="about-card dark-card">
+          <h2 style={{color: '#61dafb'}}>Card Style</h2>
+          <p style={{color: '#b0b0b0'}}>{about.bio}</p>
           <ul>
-            {about.skills.map(skill => <li key={skill}>{skill}</li>)}
+            {about.skills.map(skill => <li key={skill} style={{background: '#23272a', color: '#e0e0e0', borderRadius: 6, margin: '0.3rem 0', padding: '0.3rem 0.7rem'}}>{skill}</li>)}
           </ul>
         </section>
-        {/* Bordered Style */}
-        <section className="about-bordered">
-          <h2>Bordered Style</h2>
-          <p>{about.bio}</p>
-          <ul>
-            {about.skills.map(skill => <li key={skill}>{skill}</li>)}
-          </ul>
-        </section>
-        {/* Dark Style */}
-        <section className="about-dark">
-          <h2>Dark Style</h2>
-          <p>{about.bio}</p>
-          <ul>
-            {about.skills.map(skill => <li key={skill}>{skill}</li>)}
-          </ul>
-        </section>
-        {/* Minimalist Style */}
-        <section className="about-minimal">
-          <h2>Minimalist Style</h2>
-          <p>{about.bio}</p>
-          <ul>
-            {about.skills.map(skill => <li key={skill}>{skill}</li>)}
-          </ul>
-        </section>
-        {/* Gradient Style */}
-        <section className="about-gradient">
-          <h2>Gradient Style</h2>
-          <p>{about.bio}</p>
-          <ul>
-            {about.skills.map(skill => <li key={skill}>{skill}</li>)}
-          </ul>
-        </section>
-      </div>
     </main>
   );
 }
