@@ -105,17 +105,17 @@ function Navbar() {
           style={{ height: "80px", width: "auto" }}
         />
       </a>
-      {isMobile ? (
-        <Menu right width={220} burgerButtonClassName="bm-burger-button">
-          <div className="flex flex-col space-y-6 mt-10">
-            {React.Children.map(navLinks.props.children, (child) =>
-              React.cloneElement(child, { className: "text-white text-xl font-bold px-4 py-2" })
-            )}
-          </div>
-        </Menu>
-      ) : (
-        <div className="flex space-x-8">{navLinks}</div>
-      )}
+        {isMobile ? (
+          <Menu right width={220} burgerButtonClassName="bm-burger-button">
+            <a id="home" className="menu-item" href="#home">Home</a>
+            <a id="about" className="menu-item" href="#about">About</a>
+            <a id="projects" className="menu-item" href="#projects">Projects</a>
+            <a id="experience" className="menu-item" href="#experience">Experience</a>
+            <a id="contact" className="menu-item" href="#contact">Contact</a>
+          </Menu>
+        ) : (
+          <div className="flex space-x-8">{navLinks}</div>
+        )}
     </nav>
   );
 }
