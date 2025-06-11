@@ -39,7 +39,7 @@ function Navbar() {
         offset={-100}
         duration={600}
         spy={true}
-        className={`nav-underline text-white text-xl font-bold${
+        className={`nav-underline text-white text-xl font-bold cursor-pointer${
           activeSection === "home" ? " active" : ""
         }`}
       >
@@ -51,7 +51,7 @@ function Navbar() {
         offset={-100}
         duration={600}
         spy={true}
-        className={`nav-underline text-white text-xl font-bold${
+        className={`nav-underline text-white text-xl font-bold cursor-pointer${
           activeSection === "about" ? " active" : ""
         }`}
       >
@@ -63,7 +63,7 @@ function Navbar() {
         offset={-100}
         duration={600}
         spy={true}
-        className={`nav-underline text-white text-xl font-bold${
+        className={`nav-underline text-white text-xl font-bold cursor-pointer${
           activeSection === "projects" ? " active" : ""
         }`}
       >
@@ -75,7 +75,7 @@ function Navbar() {
         offset={-100}
         duration={600}
         spy={true}
-        className={`nav-underline text-white text-xl font-bold${
+        className={`nav-underline text-white text-xl font-bold cursor-pointer${
           activeSection === "experience" ? " active" : ""
         }`}
       >
@@ -87,7 +87,7 @@ function Navbar() {
         offset={-100}
         duration={600}
         spy={true}
-        className={`nav-underline text-white text-xl font-bold${
+        className={`nav-underline text-white text-xl font-bold cursor-pointer${
           activeSection === "contact" ? " active" : ""
         }`}
       >
@@ -105,17 +105,67 @@ function Navbar() {
           style={{ height: "80px", width: "auto" }}
         />
       </a>
-        {isMobile ? (
-          <Menu right width={220} burgerButtonClassName="bm-burger-button">
-            <a id="home" className="menu-item" href="#home">Home</a>
-            <a id="about" className="menu-item" href="#about">About</a>
-            <a id="projects" className="menu-item" href="#projects">Projects</a>
-            <a id="experience" className="menu-item" href="#experience">Experience</a>
-            <a id="contact" className="menu-item" href="#contact">Contact</a>
-          </Menu>
-        ) : (
-          <div className="flex space-x-8">{navLinks}</div>
-        )}
+      {isMobile ? (
+        <Menu right width={220} burgerButtonClassName="bm-burger-button">
+          <ScrollLink
+            to="home"
+            smooth={true}
+            offset={-100}
+            duration={600}
+            spy={true}
+            className="menu-item cursor-pointer"
+            onClick={() => document.querySelector(".bm-cross-button")?.click()}
+          >
+            Home
+          </ScrollLink>
+          <ScrollLink
+            to="about"
+            smooth={true}
+            offset={-100}
+            duration={600}
+            spy={true}
+            className="menu-item cursor-pointer"
+            onClick={() => document.querySelector(".bm-cross-button")?.click()}
+          >
+            About
+          </ScrollLink>
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            offset={-100}
+            duration={600}
+            spy={true}
+            className="menu-item cursor-pointer"
+            onClick={() => document.querySelector(".bm-cross-button")?.click()}
+          >
+            Projects
+          </ScrollLink>
+          <ScrollLink
+            to="experience"
+            smooth={true}
+            offset={-100}
+            duration={600}
+            spy={true}
+            className="menu-item cursor-pointer"
+            onClick={() => document.querySelector(".bm-cross-button")?.click()}
+          >
+            Experience
+          </ScrollLink>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            offset={-100}
+            duration={600}
+            spy={true}
+            className="menu-item cursor-pointer"
+            onClick={() => document.querySelector(".bm-cross-button")?.click()}
+          >
+            Contact
+          </ScrollLink>
+        </Menu>
+      ) : (
+        <div className="flex space-x-8">{navLinks}</div>
+      )}
     </nav>
   );
 }
