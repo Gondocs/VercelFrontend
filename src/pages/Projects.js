@@ -1,5 +1,4 @@
 import React from 'react';
-import './Projects.css';
 
 const projects = [
   {
@@ -21,22 +20,19 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="main-projects dark-section">
-      <div className="projects-variants">
-        {/* Card Style */}
-        <section className="projects-card dark-card">
-          <h2 style={{color: '#61dafb'}}>Card Style</h2>
-          <div className="projects-list">
-            {projects.map(p => (
-              <div className="project-card" key={p.title} style={{background: '#23272a', color: '#e0e0e0', borderRadius: 8, boxShadow: '0 2px 12px #0006', margin: '1rem 0', padding: '1rem'}}>
-                <h3 style={{color: '#61dafb'}}>{p.title}</h3>
-                <p style={{color: '#b0b0b0'}}>{p.desc}</p>
-                <a href={p.link} style={{color: '#61dafb'}}>View Project</a>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+    <main className="py-8">
+      <section className="max-w-2xl mx-auto bg-[#23272a] rounded-xl shadow-lg p-8">
+        <h2 className="text-2xl font-bold text-[#61dafb] mb-4">Card Style</h2>
+        <div>
+          {projects.map(p => (
+            <div key={p.title} className="bg-[#181a1b] text-[#e0e0e0] rounded-lg shadow-md my-4 p-6">
+              <h3 className="text-xl font-bold text-[#61dafb]">{p.title}</h3>
+              <p className="text-[#b0b0b0]">{p.desc}</p>
+              <a href={p.link} className="text-[#61dafb] underline">View Project</a>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

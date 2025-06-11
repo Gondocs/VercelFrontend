@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.css';
 
 const profile = {
   name: 'Göndöcs Róbert',
@@ -10,17 +9,19 @@ const profile = {
 
 export default function Home() {
   return (
-    <main className="main-home dark-section">
-        <section className="profile-card dark-card">
-          <div className="profile-content">
-            <img src={profile.image} alt="Profile" className="profile-pic" style={{borderRadius: '50%', boxShadow: '0 2px 16px #0008', background: '#181a1b'}} />
-            <div>
-              <h3 style={{color: '#61dafb'}}>{profile.name}</h3>
-              <h4 style={{color: '#e0e0e0'}}>{profile.title}</h4>
-              <p style={{color: '#b0b0b0'}}>{profile.description}</p>
-            </div>
-          </div>
-        </section>
+    <main className="py-8">
+      <section className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h1 className="text-3xl font-bold text-[#61dafb] mb-2">Üdvözöllek a személyes oldalamon!</h1>
+        <p className="text-lg text-[#b0b0b0]">Fedezd fel a munkáimat és tapasztalataimat.</p>
+      </section>
+      <section className="max-w-2xl mx-auto bg-[#23272a] rounded-xl shadow-lg p-8 flex items-center gap-8">
+        <img src={profile.image} alt="Profile" className="w-32 h-32 rounded-full shadow-lg bg-[#181a1b] object-cover" />
+        <div>
+          <h3 className="text-2xl font-bold text-[#61dafb]">{profile.name}</h3>
+          <h4 className="text-lg text-[#e0e0e0]">{profile.title}</h4>
+          <p className="text-[#b0b0b0]">{profile.description}</p>
+        </div>
+      </section>
     </main>
   );
 }
