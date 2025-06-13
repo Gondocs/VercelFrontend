@@ -1,47 +1,41 @@
-import React from 'react';
-import useScrollAnimations from '../useScrollAnimations';
-
-const projects = [
-  {
-    title: 'Személyes Portfólió Weboldal',
-    desc: 'Egy modern, reszponzív portfólió, React és styled-components segítségével. Bemutatja a készségeimet, projektjeimet és elérhetőségeimet.',
-    link: '#',
-  },
-  {
-    title: 'Feladatkezelő Alkalmazás',
-    desc: 'Teljes körű MERN alkalmazás a napi feladatok kezelésére, hitelesítéssel és valós idejű frissítésekkel.',
-    link: '#',
-  },
-  {
-    title: 'API Integrációs Bemutató',
-    desc: 'React alkalmazás, amely bemutatja a harmadik féltől származó API-k integrációját és a dinamikus adatok vizualizációját.',
-    link: '#',
-  },
-];
+import React from "react";
+import useScrollAnimations from "../useScrollAnimations";
 
 export default function Projects() {
   useScrollAnimations();
   return (
     <main className="py-16">
-        
-      {/* Példa magyar projektek listára */}
       <section className="w-[75%] max-w-4xl mx-auto bg-black">
-        <h1 className="text-3xl font-bold text-[#ffffff] mb-6 animate-slide-in-left">Projektek</h1>
+        <h1 className="text-3xl font-bold text-[#ffffff] mb-2 animate-slide-in-left">Projektek</h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
-          <h2 className="text-xl font-bold text-white animate-slide-in-left">Webshop alkalmazás</h2>
-          <p className="text-white mb-2 animate-slide-in-right">React, Node.js, MongoDB</p>
+          <h2 className="text-xl font-bold text-white animate-slide-in-left">Vállalati Szoftverkereső Rendszer (Szakdolgozat)</h2>
+          <p className="text-white mb-4 animate-slide-in-right">
+            Ez az első nagyobb projektem, amely a szakdolgozatom keretében készült, és egy modern, vállalati szoftverkereső rendszer fejlesztését tűzte ki célul. A projekt során teljes körűen végigmentem a szoftverfejlesztés minden fontosabb lépésén, az üzleti igények felmérésétől kezdve az adatbázis tervezésén át a felhasználói felület kialakításáig.
+          </p>
           <ul className="list-disc ml-6">
-            <li className="animate-slide-in-up">Teljes körű webáruház fejlesztése Reacttel.</li>
-            <li className="animate-slide-in-up">Felhasználói fiókok, kosár, fizetés integráció.</li>
+            <li className="animate-slide-in-up">Szoftverek keresése, szűrése és összehasonlítása.</li>
+            <li className="animate-slide-in-up">Felhasználói értékelések és vélemények megtekintése, beküldése.</li>
+            <li className="animate-slide-in-up">Adminisztrációs felület a szoftverek és kategóriák kezelésére.</li>
           </ul>
         </div>
-        {projects.map(p => (
-          <div key={p.title} className="bg-black text-white rounded-lg shadow-md my-4 p-6 animate-slide-in-up">
-            <h3 className="text-xl font-bold text-white animate-slide-in-left">{p.title}</h3>
-            <p className="text-white animate-slide-in-right">{p.desc}</p>
-            <a href={p.link} className="text-white underline animate-slide-in-up">Projekt megtekintése</a>
-          </div>
-        ))}
+        <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
+          <h2 className="text-xl font-bold text-white animate-slide-in-left">Online Oktatási Platform</h2>
+          <p className="text-white mb-4 animate-slide-in-right">
+            Egy webes alkalmazás, amely lehetővé teszi tanfolyamok létrehozását, kezelést és a tanulók számára való hozzáférést. A rendszer tartalmazhat videókat, teszteket, és tanulási statisztikákat.
+          </p>
+        </div>
+        <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
+          <h2 className="text-xl font-bold text-white animate-slide-in-left">Időmenedzsment Alkalmazás</h2>
+          <p className="text-white mb-4 animate-slide-in-right">
+            Egy mobilbarát alkalmazás, amely segíti a felhasználókat napi feladataik és időbeosztásuk kezelésében. Tartalmazhat értesítéseket, statisztikákat és integrációt naptárakkal.
+          </p>
+        </div>
+        <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
+          <h2 className="text-xl font-bold text-white animate-slide-in-left">E-commerce Weboldal</h2>
+          <p className="text-white mb-4 animate-slide-in-right">
+            Egy modern webshop, amely lehetővé teszi termékek böngészését, vásárlását és fizetési integrációt. Tartalmazhat adminisztrációs felületet a termékek kezelésére.
+          </p>
+        </div>
       </section>
     </main>
   );
