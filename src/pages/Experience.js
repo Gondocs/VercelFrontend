@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <main className="py-16">
       
-      <section className="w-[75%] max-w-4xl mx-auto bg-black">
+      <section className="w-[75%] mx-auto bg-black">
         <h1 className="text-3xl font-bold text-[#ffffff] mb-2 animate-slide-in-left">Tapasztalat</h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
           <h2 className="text-xl font-bold text-white animate-slide-in-left">Mérnökinformatikus BSc</h2>
@@ -14,7 +14,7 @@ export default function Experience() {
           <ul className="list-disc ml-6">
             <li className="animate-slide-in-up">Cím: Egyetem tér 1., 9026 Győr (Magyarország)</li>
             <li className="animate-slide-in-up">
-              Webhely: <a href="https://www.uni.sze.hu" className="text-white underline">https://www.uni.sze.hu</a>
+              Webhely: <a href="https://www.uni.sze.hu" target='_blank' className="text-white underline">https://www.uni.sze.hu</a>
             </li>
           </ul>
         </div>
@@ -24,7 +24,7 @@ export default function Experience() {
           <ul className="list-disc ml-6">
             <li className="animate-slide-in-up">React alapú belső feladatokat ellátó szoftver fejlesztése.</li>
             <li className="animate-slide-in-up">
-              Webhely: <a href="https://hu.gysev.hu" className="text-white underline">https://hu.gysev.hu</a>
+              Webhely: <a href="https://hu.gysev.hu" target='_blank' className="text-white underline">https://hu.gysev.hu</a>
             </li>
           </ul>
         </div>
@@ -39,7 +39,7 @@ export default function Experience() {
             <li className="animate-slide-in-up">PHP alapú fejlesztések.</li>
             <li className="animate-slide-in-up">Divi és Elementor használata a weboldalak testreszabásához.</li>
             <li className="animate-slide-in-up">
-              Webhely: <a href="https://kts.hu" className="text-white underline">https://kts.hu</a>
+              Webhely: <a href="https://kts.hu" target='_blank' className="text-white underline">https://kts.hu</a>
             </li>
           </ul>
         </div>

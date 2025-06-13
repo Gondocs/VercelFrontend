@@ -122,7 +122,7 @@ export default function About() {
   useScrollAnimations();
   return (
     <main className="py-16">
-      <section className="w-[75%] max-w-4xl mx-auto bg-black">
+      <section className="w-[75%] mx-auto bg-black">
         <h1 className="text-3xl font-bold text-[#ffffff] mb-6 animate-slide-in-left">
           Rólam
         </h1>

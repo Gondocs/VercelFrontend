@@ -5,7 +5,7 @@ export default function Projects() {
   useScrollAnimations();
   return (
     <main className="py-16">
-      <section className="w-[75%] max-w-4xl mx-auto bg-black">
+      <section className="w-[70%] mx-auto bg-black">
         <h1 className="text-3xl font-bold text-[#ffffff] mb-2 animate-slide-in-left">Projektek</h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
           <h2 className="text-xl font-bold text-white animate-slide-in-left">Vállalati Szoftverkereső Rendszer (Szakdolgozat)</h2>
@@ -18,7 +18,7 @@ export default function Projects() {
             <li className="animate-slide-in-up">Adminisztrációs felület a szoftverek és kategóriák kezelésére.</li>
           </ul>
           <p className="text-white mt-4 animate-slide-in-right">
-            <a href="http://vallalatiszoftverkereso.runasp.net" className="text-white underline italic">A projekt elérhető ezen a linken: </a>
+            <a href="http://vallalatiszoftverkereso.runasp.net" target='_blank' className="text-white underline italic">A projekt elérhető ezen a linken: </a>
           </p>
         </div>
         <h1 className="text-3xl font-bold text-[#ffffff] mb-2 mt-12 animate-slide-in-left">Jövőbeli Projektötletek</h1>
