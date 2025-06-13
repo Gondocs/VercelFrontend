@@ -122,12 +122,12 @@ export default function About() {
   useScrollAnimations();
   return (
     <main className="py-16">
-      <section className="w-[75%] mx-auto bg-black">
-        <h1 className="text-3xl font-bold text-[#ffffff] mb-6 animate-slide-in-left">
+      <section className="w-[75%] mx-auto bg-black"> 
+        <h1 className="text-3xl font-bold text-[#ffffff] mb-2 animate-slide-in-left">
           Rólam
         </h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg">
-          <p className="text-white mb-4 animate-slide-in-right">{about.bio}</p>
+          <p className="text-white mb-4 animate-slide-in-right text-lg">{about.bio}</p>
           <h2 className="text-2xl font-semibold mt-20 mb-2">Frontend</h2>
           <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
             {about.frontend.map((skill) => (
@@ -174,7 +174,7 @@ export default function About() {
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl font-semibold mt-20 mb-2">Tools</h2>
+          <h2 className="text-2xl font-semibold mt-20 mb-2">Eszközök</h2>
           <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
             {about.tools.map((tool) => (
               <li
@@ -197,7 +197,7 @@ export default function About() {
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl font-semibold mt-20 mb-2">Data & Analytics</h2>
+          <h2 className="text-2xl font-semibold mt-20 mb-2">Adat & Analitika</h2>
           <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
             {about.data.map((item) => (
               <li

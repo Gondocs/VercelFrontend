@@ -1,5 +1,6 @@
 import React from "react";
 import useScrollAnimations from "../useScrollAnimations";
+import { useMediaQuery } from "react-responsive";
 
 const contactInfo = {
   email: "gondocs.robert@gmail.com",
@@ -10,7 +11,7 @@ const contactInfo = {
 function ContactForm({ className }) {
   return (
     <form
-      className={`flex flex-col gap-3 bg-black text-white rounded-lg shadow-lg p-6 w-[75%] ${
+      className={`flex flex-col gap-3 bg-black text-white rounded-lg shadow-lg p-6 w-full ${
         className || ""
       }`.trim()}
     >
@@ -53,13 +54,8 @@ function ContactLinks({ className }) {
         href={contactInfo.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 text-white hover:underline"
+        className="text-[#61dafb] hover:underline"
       >
-        <img
-          src="github-original.svg"
-          alt="GitHub logo"
-          className="w-6 h-6"
-        />
         GitHub
       </a>
       <span>|</span>
@@ -67,13 +63,8 @@ function ContactLinks({ className }) {
         href={contactInfo.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 text-white hover:underline"
+        className="text-[#61dafb] hover:underline"
       >
-        <img
-          src="linkedin.svg"
-          alt="LinkedIn logo"
-          className="w-6 h-6"
-        />
         LinkedIn
       </a>
     </div>
@@ -82,14 +73,19 @@ function ContactLinks({ className }) {
 
 export default function Contact() {
   useScrollAnimations();
+
+  const isMobile = useMediaQuery({ maxWidth: 810 });
+
   return (
     <main className="py-16">
-      <section className="w-[75%] mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up">
-        <h1 className="text-5xl font-extrabold text-[#ffffff] mb-10 animate-slide-in-left text-center">
+      
+      <section className={`mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up${!isMobile ? ' w-[75%]' : 'w-[90%]'}`}>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#ffffff] mb-10 animate-slide-in-left text-center">
           Kapcsolat
         </h1>
         <p className="text-white mb-4 animate-slide-in-up text-center">
-          Elérsz e-mailen:{" "}
+          Elérsz e-mailen:
+          <br />
           <a
             href={`mailto:${contactInfo.email}`}
             className="text-white underline animate-slide-in-up"
