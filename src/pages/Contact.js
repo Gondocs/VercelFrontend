@@ -53,8 +53,13 @@ function ContactLinks({ className }) {
         href={contactInfo.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#61dafb] hover:underline"
+        className="flex items-center gap-2 text-white hover:underline"
       >
+        <img
+          src="github-original.svg"
+          alt="GitHub logo"
+          className="w-6 h-6"
+        />
         GitHub
       </a>
       <span>|</span>
@@ -62,8 +67,13 @@ function ContactLinks({ className }) {
         href={contactInfo.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#61dafb] hover:underline"
+        className="flex items-center gap-2 text-white hover:underline"
       >
+        <img
+          src="linkedin.svg"
+          alt="LinkedIn logo"
+          className="w-6 h-6"
+        />
         LinkedIn
       </a>
     </div>
