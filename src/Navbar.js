@@ -5,12 +5,12 @@ import { slide as Menu } from "react-burger-menu";
 import { useMediaQuery } from "react-responsive";
 
 function Navbar() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("fooldal");
   const isMobile = useMediaQuery({ maxWidth: 810 });
 
   useEffect(() => {
     // Only highlight nav link for section currently in view
-    const sectionIds = ["home", "about", "projects", "experience", "contact"];
+    const sectionIds = ["fooldal", "rolam", "projektek", "tapasztalat", "kapcsolat"];
     function handleScroll() {
       const scrollPos = window.scrollY + 200;
       let found = false;
@@ -34,61 +34,61 @@ function Navbar() {
   const navLinks = (
     <>
       <ScrollLink
-        to="home"
+        to="fooldal"
         smooth={true}
         offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold cursor-pointer${
-          activeSection === "home" ? " active" : ""
+          activeSection === "fooldal" ? " active" : ""
         }`}
       >
         Kezdőlap
       </ScrollLink>
       <ScrollLink
-        to="about"
+        to="rolam"
         smooth={true}
         offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold cursor-pointer${
-          activeSection === "about" ? " active" : ""
+          activeSection === "rolam" ? " active" : ""
         }`}
       >
         Rólam
       </ScrollLink>
       <ScrollLink
-        to="projects"
+        to="projektek"
         smooth={true}
         offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold cursor-pointer${
-          activeSection === "projects" ? " active" : ""
+          activeSection === "projektek" ? " active" : ""
         }`}
       >
         Projektek
       </ScrollLink>
       <ScrollLink
-        to="experience"
+        to="tapasztalat"
         smooth={true}
         offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold cursor-pointer${
-          activeSection === "experience" ? " active" : ""
+          activeSection === "tapasztalat" ? " active" : ""
         }`}
       >
         Tapasztalat
       </ScrollLink>
       <ScrollLink
-        to="contact"
+        to="kapcsolat"
         smooth={true}
         offset={-100}
         duration={600}
         spy={true}
         className={`nav-underline text-white text-xl font-bold cursor-pointer${
-          activeSection === "contact" ? " active" : ""
+          activeSection === "kapcsolat" ? " active" : ""
         }`}
       >
         Kapcsolat
@@ -98,7 +98,7 @@ function Navbar() {
 
   return (
     <nav className="flex items-center justify-between px-10 py-2 bg-black shadow-lg border-b-2 border-white sticky top-0 z-50">
-      <a href="#home" className={`flex-shrink-0${!isMobile ? ' pl-16' : ''}`}>
+      <a href="#fooldal" className={`flex-shrink-0${!isMobile ? ' pl-16' : ''}`}>
         <img
           src="/GR_logo.webp"
           alt="Logo"
@@ -108,7 +108,7 @@ function Navbar() {
       {isMobile ? (
         <Menu right width={220} burgerButtonClassName="bm-burger-button">
           <ScrollLink
-            to="home"
+            to="fooldal"
             smooth={true}
             offset={-100}
             duration={600}
@@ -119,7 +119,7 @@ function Navbar() {
             Kezdőlap
           </ScrollLink>
           <ScrollLink
-            to="about"
+            to="rolam"
             smooth={true}
             offset={-100}
             duration={600}
@@ -130,7 +130,7 @@ function Navbar() {
             Rólam
           </ScrollLink>
           <ScrollLink
-            to="projects"
+            to="projektek"
             smooth={true}
             offset={-100}
             duration={600}
@@ -141,7 +141,7 @@ function Navbar() {
             Projektek
           </ScrollLink>
           <ScrollLink
-            to="experience"
+            to="tapasztalat"
             smooth={true}
             offset={-100}
             duration={600}
@@ -152,7 +152,7 @@ function Navbar() {
             Tapasztalat
           </ScrollLink>
           <ScrollLink
-            to="contact"
+            to="kapcsolat"
             smooth={true}
             offset={-100}
             duration={600}

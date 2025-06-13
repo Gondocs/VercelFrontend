@@ -12,19 +12,19 @@ export default function App() {
     <div className="bg-black min-h-screen text-white transition-colors duration-500">
       <Navbar />
 
-      <div id="home">
+      <div id="fooldal">
         <Home />
       </div>
-      <div id="about">
+      <div id="rolam">
         <About />
       </div>
-      <div id="projects">
+      <div id="projektek">
         <Projects />
       </div>
-      <div id="experience">
+      <div id="tapasztalat">
         <Experience />
       </div>
-      <div id="contact">
+      <div id="kapcsolat">
         <Contact />
       </div>
       <Footer />
