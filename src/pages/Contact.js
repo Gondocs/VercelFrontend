@@ -8,41 +8,6 @@ const contactInfo = {
   linkedin: "https://www.linkedin.com/in/róbert-göndöcs-578486280/",
 };
 
-function ContactForm({ className }) {
-  return (
-    <form
-      className={`flex flex-col gap-3 bg-black text-white rounded-lg shadow-lg p-6 w-full ${
-        className || ""
-      }`.trim()}
-    >
-      <input
-        type="text"
-        placeholder="Név"
-        required
-        className="bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
-      />
-      <input
-        type="email"
-        placeholder="Email cím"
-        required
-        className="bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
-      />
-      <textarea
-        placeholder="Üzenet"
-        rows={4}
-        required
-        className="bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
-      />
-      <button
-        type="submit"
-        className="bg-[#61dafb] text-[#181a1b] font-bold rounded px-4 py-2 mt-2 hover:bg-[#4ec6e6] transition"
-      >
-        Üzenet küldése
-      </button>
-    </form>
-  );
-}
-
 function ContactLinks({ className }) {
   return (
     <div
@@ -54,8 +19,13 @@ function ContactLinks({ className }) {
         href={contactInfo.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#61dafb] hover:underline"
+        className="flex items-center gap-2 text-white hover:underline"
       >
+        <img
+          src="github-original.svg"
+          alt="GitHub logo"
+          className="w-6 h-6"
+        />
         GitHub
       </a>
       <span>|</span>
@@ -63,8 +33,13 @@ function ContactLinks({ className }) {
         href={contactInfo.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#61dafb] hover:underline"
+        className="flex items-center gap-2 text-white hover:underline"
       >
+        <img
+          src="linkedin.svg"
+          alt="LinkedIn logo"
+          className="w-6 h-6"
+        />
         LinkedIn
       </a>
     </div>
@@ -77,13 +52,13 @@ export default function Contact() {
   const isMobile = useMediaQuery({ maxWidth: 810 });
 
   return (
-    <main className="py-16">
+    <main className="pt-16">
       
       <section className={`mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up${!isMobile ? ' w-[75%]' : 'w-[90%]'}`}>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#ffffff] mb-10 animate-slide-in-left text-center">
+        <h1 className={` font-extrabold text-[#ffffff] mb-10 animate-slide-in-left text-center ${!isMobile ? 'text-5xl' : 'text-4xl'}`}>
           Kapcsolat
         </h1>
-        <p className="text-white mb-4 animate-slide-in-up text-center">
+        <p className="text-white mb-4 animate-slide-in-up text-center text-2xl">
           Elérsz e-mailen:
           <br />
           <a
@@ -94,8 +69,7 @@ export default function Contact() {
           </a>
         </p>
         <div className="w-full flex flex-col items-center">
-          <ContactForm className="animate-slide-in-up text-center" />
-          <ContactLinks className="animate-slide-in-up" />
+          <ContactLinks className="animate-slide-in-up text-xl" />
         </div>
       </section>
     </main>

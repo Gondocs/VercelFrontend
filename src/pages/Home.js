@@ -21,7 +21,9 @@ export default function Home() {
           !isMobile ? " w-[75%]" : "w-[95%]"
         }`}
       >
-        <h1 className="text-2xl  md:text-4xl font-extrabold text-white mb-6 text-center drop-shadow-lg animate-slide-in-left">
+        <h1 className={`text-5xl font-extrabold text-white mb-6 text-center drop-shadow-lg animate-slide-in-left ${
+          !isMobile ? "text-5xl" : "text-2xl"
+        }`}>
           Üdvözöllek a személyes oldalamon!
         </h1>
         <p className="text-xl text-white text-center mb-2 animate-slide-in-right">
