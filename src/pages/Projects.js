@@ -17,7 +17,11 @@ export default function Projects() {
             <li className="animate-slide-in-up">Felhasználói értékelések és vélemények megtekintése, beküldése.</li>
             <li className="animate-slide-in-up">Adminisztrációs felület a szoftverek és kategóriák kezelésére.</li>
           </ul>
+          <p className="text-white mt-4 animate-slide-in-right">
+            <a href="http://vallalatiszoftverkereso.runasp.net" className="text-white underline italic">A projekt elérhető ezen a linken: </a>
+          </p>
         </div>
+        <h1 className="text-3xl font-bold text-[#ffffff] mb-2 mt-12 animate-slide-in-left">Jövőbeli Projektötletek</h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
           <h2 className="text-xl font-bold text-white animate-slide-in-left">Online Oktatási Platform</h2>
           <p className="text-white mb-4 animate-slide-in-right">
