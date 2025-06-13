@@ -97,7 +97,7 @@ export default function Contact() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col gap-3 bg-black text-white rounded-lg shadow-lg p-6 w-[75%] mx-auto"
+          className="flex flex-col gap-3 bg-black text-white rounded-lg shadow-lg p-6 w-[100%] mx-auto"
         >
           <div>
             <input

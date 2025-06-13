@@ -127,7 +127,7 @@ export default function About() {
           Rólam
         </h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg">
-          <p className="text-white mb-4 animate-slide-in-right text-lg">{about.bio}</p>
+          <p className="text-white mb-4 animate-slide-in-right">{about.bio}</p>
           <h2 className="text-2xl font-semibold mt-20 mb-2">Frontend</h2>
           <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
             {about.frontend.map((skill) => (

@@ -6,7 +6,7 @@ const profile = {
   name: "Göndöcs Róbert",
   title: "Web- és szoftverfejlesztő",
   description:
-    "Szenvedélyesen építek gyönyörű, akadálymentes és nagy teljesítményű webalkalmazásokat. Tapasztalt vagyok React, JavaScript és modern webes technológiák terén.",
+    "Tapasztalt web- és szoftverfejlesztő, elkötelezett a modern technológiák alkalmazása iránt. Szenvedélyem a letisztult, akadálymentes és nagy teljesítményű webalkalmazások építése, különös tekintettel a React és JavaScript, Typescript alapú megoldásokra. Jelenleg főként Wordpress alapú weboldalak fejlesztésével foglalkozom, de mindig nyitott vagyok új kihívásokra és lehetőségekre.",
   image: "profilkep_CV.webp",
 };
 
@@ -48,7 +48,7 @@ export default function Home() {
           <h4 className="text-xl text-white mb-2 font-semibold">
             {profile.title}
           </h4>
-          <p className="text-lg text-white leading-relaxed">
+          <p className="text-white leading-relaxed">
             {profile.description}
           </p>
         </div>
