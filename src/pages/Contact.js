@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import useScrollAnimations from "../useScrollAnimations";
 import { useMediaQuery } from "react-responsive";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const contactInfo = {
   email: "gondocs.robert@gmail.com",
@@ -45,10 +46,18 @@ export default function Contact() {
   const isMobile = useMediaQuery({ maxWidth: 810 });
   const form = useRef();
   const [formStatus, setFormStatus] = useState("");
+  const [captchaToken, setCaptchaToken] = useState(null);
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    if (!captchaToken) {
+      alert("Kérlek igazold, hogy nem vagy robot (reCAPTCHA)");
+      return;
+    }
     emailjs
       .sendForm(
         "service_ouid7wu",
@@ -127,6 +136,12 @@ export default function Contact() {
               rows={4}
               required
               className="w-full bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
+            />
+          </div>
+          <div className="flex justify-center my-2">
+            <ReCAPTCHA
+              sitekey={process.env.REACT_APP_RECAPTCHA_SITE}
+              onChange={handleCaptchaChange}
             />
           </div>
           <div>
