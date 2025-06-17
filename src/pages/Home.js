@@ -39,6 +39,9 @@ export default function Home() {
         <img
           src={profile.image}
           alt="Profile"
+          width={224}
+          height={224}
+          loading="eager"
           className="w-56 h-56 rounded-full shadow-2xl border-4 border-black object-cover bg-black transition-transform duration-300 hover:scale-105 animate-slide-in-left"
         />
         <div className="flex-1 text-center md:text-left animate-slide-in-right">

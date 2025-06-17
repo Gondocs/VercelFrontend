@@ -144,6 +144,9 @@ export default function About() {
                   <img
                     src={skill.logo}
                     alt={skill.name + " logo"}
+                    width={40}
+                    height={40}
+                    loading="lazy"
                     className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
                   />
                   <span className="text-sm text-center">{skill.name}</span>
@@ -167,6 +170,9 @@ export default function About() {
                   <img
                     src={skill.logo}
                     alt={skill.name + " logo"}
+                    width={40}
+                    height={40}
+                    loading="lazy"
                     className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
                   />
                   <span className="text-sm text-center">{skill.name}</span>
@@ -190,6 +196,9 @@ export default function About() {
                   <img
                     src={tool.logo}
                     alt={tool.name + " logo"}
+                    width={40}
+                    height={40}
+                    loading="lazy"
                     className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
                   />
                   <span className="text-sm text-center">{tool.name}</span>
@@ -213,6 +222,9 @@ export default function About() {
                   <img
                     src={item.logo}
                     alt={item.name + " logo"}
+                    width={40}
+                    height={40}
+                    loading="lazy"
                     className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
                   />
                   <span className="text-sm text-center">{item.name}</span>

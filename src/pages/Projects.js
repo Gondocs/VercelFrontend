@@ -5,7 +5,7 @@ export default function Projects() {
   useScrollAnimations();
   return (
     <main className="py-16">
-      <section className="w-[70%] mx-auto bg-black">
+      <section className="w-[75%] mx-auto bg-black">
         <h1 className="text-3xl font-bold text-[#ffffff] mb-2 animate-slide-in-left">Projektek</h1>
         <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg animate-slide-in-up">
           <h2 className="text-lg font-bold text-white animate-slide-in-left md:text-xl mb-2">Vállalati Szoftverkereső Rendszer (Szakdolgozat)</h2>

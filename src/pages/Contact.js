@@ -23,7 +23,14 @@ function ContactLinks({ className }) {
         rel="noopener noreferrer"
         className="flex items-center gap-2 text-white hover:underline"
       >
-        <img src="github-original.svg" alt="GitHub logo" className="w-6 h-6" />
+        <img
+          src="github-original.svg"
+          alt="GitHub logo"
+          width={24}
+          height={24}
+          loading="lazy"
+          className="w-6 h-6"
+        />
         GitHub
       </a>
       <span>|</span>
@@ -33,7 +40,14 @@ function ContactLinks({ className }) {
         rel="noopener noreferrer"
         className="flex items-center gap-2 text-white hover:underline"
       >
-        <img src="linkedin.svg" alt="LinkedIn logo" className="w-6 h-6" />
+        <img
+          src="linkedin.svg"
+          alt="LinkedIn logo"
+          width={24}
+          height={24}
+          loading="lazy"
+          className="w-6 h-6"
+        />
         LinkedIn
       </a>
     </div>
