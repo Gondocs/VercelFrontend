@@ -5,15 +5,15 @@ export default function Projects() {
   useScrollAnimations();
   return (
     <main className="py-20 relative">
-      <section className="w-[85%] mx-auto">
-        {/* Section Header */}
-        <div className="mb-16 animate-slide-in-left">
-          <h1 className="text-6xl font-black gradient-text mb-4">Projektek</h1>
-          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
+      <section className="max-w-6xl mx-auto px-6">
+        {/* Section Header - Centered */}
+        <div className="text-center mb-16 animate-slide-in-down">
+          <h1 className="text-6xl font-black gradient-text mb-6">Projektek</h1>
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
         </div>
         
         {/* Main Project */}
-        <div className="glow-border text-white rounded-2xl p-10 mb-12 shadow-2xl animate-slide-in-up group">
+        <div className="glow-border text-white rounded-2xl p-10 mb-20 shadow-2xl animate-slide-in-up group max-w-5xl mx-auto">
           <div className="flex items-start gap-4 mb-6">
             <div className="text-6xl">💼</div>
             <div className="flex-1">
@@ -47,7 +47,8 @@ export default function Projects() {
           
           <a 
             href="http://vallalatiszoftverkereso.runasp.net" 
-            target='_blank' 
+            target='_blank'
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-semibold transition-colors duration-300 group"
           >
             <span>Projekt megtekintése</span>
@@ -56,13 +57,13 @@ export default function Projects() {
         </div>
         
         {/* Future Projects Header */}
-        <div className="mb-12 animate-slide-in-left">
-          <h2 className="text-5xl font-black text-white mb-4">Jövőbeli Projektötletek</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-white to-transparent"></div>
+        <div className="text-center mb-12 animate-slide-in-down">
+          <h2 className="text-5xl font-black text-white mb-6">Jövőbeli Projektötletek</h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
         </div>
         
         {/* Future Projects Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="gradient-card text-white rounded-2xl p-8 animate-slide-in-up">
             <div className="text-5xl mb-4">🎓</div>
             <h3 className="text-2xl font-bold text-white mb-4">Online Oktatási Platform</h3>

@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import useScrollAnimations from "../useScrollAnimations";
-import { useMediaQuery } from "react-responsive";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const contactInfo = {
@@ -10,54 +9,9 @@ const contactInfo = {
   linkedin: "https://www.linkedin.com/in/róbert-göndöcs-578486280/",
 };
 
-function ContactLinks({ className }) {
-  return (
-    <div
-      className={`flex gap-4 gradient-card rounded-lg shadow-lg p-4 mt-4 ${
-        className || ""
-      }`.trim()}
-    >
-      <a
-        href={contactInfo.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110"
-      >
-        <img
-          src="github-original.svg"
-          alt="GitHub logo"
-          width={24}
-          height={24}
-          loading="lazy"
-          className="w-6 h-6"
-        />
-        GitHub
-      </a>
-      <span className="text-gray-500">|</span>
-      <a
-        href={contactInfo.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110"
-      >
-        <img
-          src="linkedin.svg"
-          alt="LinkedIn logo"
-          width={24}
-          height={24}
-          loading="lazy"
-          className="w-6 h-6"
-        />
-        LinkedIn
-      </a>
-    </div>
-  );
-}
-
 export default function Contact() {
   useScrollAnimations();
 
-  const isMobile = useMediaQuery({ maxWidth: 810 });
   const form = useRef();
   const [formStatus, setFormStatus] = useState("");
   const [captchaToken, setCaptchaToken] = useState(null);
@@ -92,16 +46,14 @@ export default function Contact() {
 
   return (
     <main className="pt-20 pb-20 relative">
-      <section
-        className={`mx-auto ${!isMobile ? "w-[80%]" : "w-[90%]"}`}
-      >
-        {/* Section Header */}
-        <div className="mb-16 animate-slide-in-left">
-          <h1 className="text-6xl font-black gradient-text mb-4">Kapcsolat</h1>
-          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
+      <section className="max-w-6xl mx-auto px-6">
+        {/* Section Header - Centered */}
+        <div className="text-center mb-16 animate-slide-in-down">
+          <h1 className="text-6xl font-black gradient-text mb-6">Kapcsolat</h1>
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Left Column - Info */}
           <div className="animate-slide-in-left">
             <div className="gradient-card p-10 rounded-2xl h-full">

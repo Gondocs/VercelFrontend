@@ -122,27 +122,26 @@ export default function About() {
   useScrollAnimations();
   return (
     <main className="py-20 relative">
-      <section className="w-[85%] mx-auto">
-        {/* Section Header */}
-        <div className="mb-16 animate-slide-in-left">
-          <h1 className="text-6xl font-black gradient-text mb-4">
+      <section className="max-w-6xl mx-auto px-6">
+        {/* Section Header - Centered */}
+        <div className="text-center mb-16 animate-slide-in-down">
+          <h1 className="text-6xl font-black gradient-text mb-6">
             Rólam
           </h1>
-          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
-        </div>
-        
-        <div className="glow-border text-white rounded-2xl p-12 shadow-2xl">
-          <p className="text-gray-300 text-xl mb-16 animate-slide-in-right leading-relaxed max-w-4xl">
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6"></div>
+          <p className="text-gray-400 text-xl leading-relaxed max-w-4xl mx-auto">
             {about.bio}
           </p>
-          
+        </div>
+        
+        <div className="space-y-20">
           {/* Frontend Skills */}
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+          <div className="animate-slide-in-up">
+            <h2 className="text-4xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
               <span className="text-5xl">⚡</span>
               Frontend
             </h2>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {about.frontend.map((skill) => (
                 <li
                   key={skill.name}
@@ -176,12 +175,12 @@ export default function About() {
           <div className="section-divider"></div>
           
           {/* Backend Skills */}
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+          <div className="animate-slide-in-up">
+            <h2 className="text-4xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
               <span className="text-5xl">🔧</span>
               Backend
             </h2>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {about.backend.map((skill) => (
                 <li
                   key={skill.name}
@@ -215,12 +214,12 @@ export default function About() {
           <div className="section-divider"></div>
           
           {/* Tools */}
-          <div className="mb-16">
-            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+          <div className="animate-slide-in-up">
+            <h2 className="text-4xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
               <span className="text-5xl">🛠️</span>
               Eszközök
             </h2>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {about.tools.map((tool) => (
                 <li
                   key={tool.name}
@@ -254,12 +253,12 @@ export default function About() {
           <div className="section-divider"></div>
           
           {/* Data & Analytics */}
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+          <div className="animate-slide-in-up">
+            <h2 className="text-4xl font-bold text-white mb-8 text-center flex items-center justify-center gap-4">
               <span className="text-5xl">📊</span>
               Adat & Analitika
             </h2>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {about.data.map((item) => (
                 <li
                   key={item.name}

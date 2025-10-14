@@ -5,15 +5,15 @@ export default function Experience() {
   useScrollAnimations();
   return (
     <main className="py-20 relative">
-      <section className="w-[85%] mx-auto">
-        {/* Section Header */}
-        <div className="mb-16 animate-slide-in-left">
-          <h1 className="text-6xl font-black gradient-text mb-4">Tapasztalat</h1>
-          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
+      <section className="max-w-6xl mx-auto px-6">
+        {/* Section Header - Centered */}
+        <div className="text-center mb-16 animate-slide-in-down">
+          <h1 className="text-6xl font-black gradient-text mb-6">Tapasztalat</h1>
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
         </div>
         
         {/* Timeline */}
-        <div className="space-y-12">
+        <div className="space-y-12 max-w-5xl mx-auto">
           {/* KTS Online Kft. */}
           <div className="gradient-card text-white rounded-2xl p-10 shadow-2xl animate-slide-in-up relative">
             <div className="absolute -left-4 top-10 w-8 h-8 bg-white rounded-full border-4 border-black"></div>
@@ -47,7 +47,7 @@ export default function Experience() {
                   </div>
                 </div>
                 
-                <a href="https://kts.hu" target='_blank' className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-semibold mt-6 transition-colors group">
+                <a href="https://kts.hu" target='_blank' rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-semibold mt-6 transition-colors group">
                   <span>kts.hu</span>
                   <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                 </a>
@@ -71,7 +71,7 @@ export default function Experience() {
                   <div className="text-gray-400">React alapú belső feladatokat ellátó szoftver fejlesztése, modern webes technológiák alkalmazása</div>
                 </div>
                 
-                <a href="https://hu.gysev.hu" target='_blank' className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-semibold mt-6 transition-colors group">
+                <a href="https://hu.gysev.hu" target='_blank' rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-semibold mt-6 transition-colors group">
                   <span>hu.gysev.hu</span>
                   <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                 </a>
@@ -101,7 +101,7 @@ export default function Experience() {
                   <div className="bg-white/5 p-4 rounded-lg">
                     <div className="text-white font-semibold mb-2">🌐 Intézmény</div>
                     <div className="text-sm text-gray-400">
-                      <a href="https://www.uni.sze.hu" target='_blank' className="hover:text-white transition-colors">
+                      <a href="https://www.uni.sze.hu" target='_blank' rel="noopener noreferrer" className="hover:text-white transition-colors">
                         uni.sze.hu
                       </a>
                     </div>
