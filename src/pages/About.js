@@ -121,133 +121,174 @@ const about = {
 export default function About() {
   useScrollAnimations();
   return (
-    <main className="py-16 relative">
-      <section className="w-[75%] mx-auto"> 
-        <h1 className="text-5xl font-bold gradient-text mb-8 animate-slide-in-left">
-          Rólam
-        </h1>
-        <div className="glow-border text-white rounded-xl my-4 p-8 shadow-lg">
-          <p className="text-gray-300 text-lg mb-8 animate-slide-in-right leading-relaxed">{about.bio}</p>
+    <main className="py-20 relative">
+      <section className="w-[85%] mx-auto">
+        {/* Section Header */}
+        <div className="mb-16 animate-slide-in-left">
+          <h1 className="text-6xl font-black gradient-text mb-4">
+            Rólam
+          </h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
+        </div>
+        
+        <div className="glow-border text-white rounded-2xl p-12 shadow-2xl">
+          <p className="text-gray-300 text-xl mb-16 animate-slide-in-right leading-relaxed max-w-4xl">
+            {about.bio}
+          </p>
           
-          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Frontend</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
-            {about.frontend.map((skill) => (
-              <li
-                key={skill.name}
-                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-primary/50 transition-all duration-300"
-              >
-                <a
-                  href={skill.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
+          {/* Frontend Skills */}
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+              <span className="text-5xl">⚡</span>
+              Frontend
+            </h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {about.frontend.map((skill) => (
+                <li
+                  key={skill.name}
+                  className="flex flex-col items-center gradient-card rounded-xl py-6 px-4 animate-slide-in-up shadow-lg group"
                 >
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <img
-                      src={skill.logo}
-                      alt={skill.name + " logo"}
-                      width={48}
-                      height={48}
-                      loading="lazy"
-                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
-                    />
-                  </div>
-                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{skill.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <a
+                    href={skill.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center w-full"
+                  >
+                    <div className="relative mb-4 p-4 bg-white/5 rounded-lg group-hover:bg-white/10 transition-all">
+                      <img
+                        src={skill.logo}
+                        alt={skill.name + " logo"}
+                        width={56}
+                        height={56}
+                        loading="lazy"
+                        className="w-14 h-14 transition-transform group-hover:scale-110 duration-300"
+                      />
+                    </div>
+                    <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors font-medium">
+                      {skill.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           
-          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Backend</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
-            {about.backend.map((skill) => (
-              <li
-                key={skill.name}
-                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-accent/50 transition-all duration-300"
-              >
-                <a
-                  href={skill.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
-                >
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <img
-                      src={skill.logo}
-                      alt={skill.name + " logo"}
-                      width={48}
-                      height={48}
-                      loading="lazy"
-                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
-                    />
-                  </div>
-                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{skill.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="section-divider"></div>
           
-          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Eszközök</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
-            {about.tools.map((tool) => (
-              <li
-                key={tool.name}
-                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-cyber-blue/50 transition-all duration-300"
-              >
-                <a
-                  href={tool.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
+          {/* Backend Skills */}
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+              <span className="text-5xl">🔧</span>
+              Backend
+            </h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {about.backend.map((skill) => (
+                <li
+                  key={skill.name}
+                  className="flex flex-col items-center gradient-card rounded-xl py-6 px-4 animate-slide-in-up shadow-lg group"
                 >
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/20 to-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <img
-                      src={tool.logo}
-                      alt={tool.name + " logo"}
-                      width={48}
-                      height={48}
-                      loading="lazy"
-                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
-                    />
-                  </div>
-                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{tool.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <a
+                    href={skill.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center w-full"
+                  >
+                    <div className="relative mb-4 p-4 bg-white/5 rounded-lg group-hover:bg-white/10 transition-all">
+                      <img
+                        src={skill.logo}
+                        alt={skill.name + " logo"}
+                        width={56}
+                        height={56}
+                        loading="lazy"
+                        className="w-14 h-14 transition-transform group-hover:scale-110 duration-300"
+                      />
+                    </div>
+                    <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors font-medium">
+                      {skill.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           
-          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Adat & Analitika</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-6">
-            {about.data.map((item) => (
-              <li
-                key={item.name}
-                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-              >
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
+          <div className="section-divider"></div>
+          
+          {/* Tools */}
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+              <span className="text-5xl">🛠️</span>
+              Eszközök
+            </h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {about.tools.map((tool) => (
+                <li
+                  key={tool.name}
+                  className="flex flex-col items-center gradient-card rounded-xl py-6 px-4 animate-slide-in-up shadow-lg group"
                 >
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <img
-                      src={item.logo}
-                      alt={item.name + " logo"}
-                      width={48}
-                      height={48}
-                      loading="lazy"
-                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
-                    />
-                  </div>
-                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{item.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <a
+                    href={tool.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center w-full"
+                  >
+                    <div className="relative mb-4 p-4 bg-white/5 rounded-lg group-hover:bg-white/10 transition-all">
+                      <img
+                        src={tool.logo}
+                        alt={tool.name + " logo"}
+                        width={56}
+                        height={56}
+                        loading="lazy"
+                        className="w-14 h-14 transition-transform group-hover:scale-110 duration-300"
+                      />
+                    </div>
+                    <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors font-medium">
+                      {tool.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="section-divider"></div>
+          
+          {/* Data & Analytics */}
+          <div>
+            <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-4">
+              <span className="text-5xl">📊</span>
+              Adat & Analitika
+            </h2>
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {about.data.map((item) => (
+                <li
+                  key={item.name}
+                  className="flex flex-col items-center gradient-card rounded-xl py-6 px-4 animate-slide-in-up shadow-lg group"
+                >
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center w-full"
+                  >
+                    <div className="relative mb-4 p-4 bg-white/5 rounded-lg group-hover:bg-white/10 transition-all">
+                      <img
+                        src={item.logo}
+                        alt={item.name + " logo"}
+                        width={56}
+                        height={56}
+                        loading="lazy"
+                        className="w-14 h-14 transition-transform group-hover:scale-110 duration-300"
+                      />
+                    </div>
+                    <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors font-medium">
+                      {item.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </main>

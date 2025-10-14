@@ -10,13 +10,16 @@ import Contact from "./pages/Contact";
 export default function App() {
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
-      {/* Animated background with gradient */}
-      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 -z-10"></div>
+      {/* Sophisticated dark background */}
+      <div className="fixed inset-0 bg-black -z-10"></div>
       
-      {/* Floating shapes for visual interest */}
-      <div className="fixed top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-      <div className="fixed top-40 right-10 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="fixed bottom-20 left-1/3 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
+      {/* Subtle grid pattern overlay */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:100px_100px] -z-10"></div>
+      
+      {/* Floating gradient orbs for depth */}
+      <div className="fixed top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-5 animate-float"></div>
+      <div className="fixed top-40 right-10 w-96 h-96 bg-gray-400 rounded-full mix-blend-overlay filter blur-3xl opacity-5 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="fixed bottom-20 left-1/3 w-96 h-96 bg-gray-300 rounded-full mix-blend-overlay filter blur-3xl opacity-5 animate-float" style={{ animationDelay: '4s' }}></div>
       
       <Navbar />
 

@@ -5,19 +5,19 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#00d4ff',
-          dark: '#00a8cc',
-          light: '#33ddff',
+          DEFAULT: '#ffffff',
+          dark: '#e5e5e5',
+          light: '#ffffff',
         },
         accent: {
-          DEFAULT: '#00ff88',
-          dark: '#00cc6a',
-          light: '#33ffaa',
+          DEFAULT: '#a3a3a3',
+          dark: '#737373',
+          light: '#d4d4d4',
         },
         cyber: {
-          blue: '#00d4ff',
-          green: '#00ff88',
-          teal: '#00ffcc',
+          blue: '#f5f5f5',
+          green: '#e5e5e5',
+          teal: '#d4d4d4',
         },
       },
       backgroundImage: {

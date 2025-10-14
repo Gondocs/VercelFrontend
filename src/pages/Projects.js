@@ -4,59 +4,88 @@ import useScrollAnimations from "../useScrollAnimations";
 export default function Projects() {
   useScrollAnimations();
   return (
-    <main className="py-16 relative">
-      <section className="w-[75%] mx-auto">
-        <h1 className="text-5xl font-bold gradient-text mb-8 animate-slide-in-left">Projektek</h1>
+    <main className="py-20 relative">
+      <section className="w-[85%] mx-auto">
+        {/* Section Header */}
+        <div className="mb-16 animate-slide-in-left">
+          <h1 className="text-6xl font-black gradient-text mb-4">Projektek</h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
+        </div>
         
-        <div className="glow-border text-white rounded-xl my-6 p-8 shadow-lg animate-slide-in-up hover:shadow-primary/50 transition-all duration-300">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent animate-slide-in-left mb-3">
-            Vállalati Szoftverkereső Rendszer (Szakdolgozat)
-          </h2>
-          <p className="text-gray-300 mb-6 animate-slide-in-right leading-relaxed">
+        {/* Main Project */}
+        <div className="glow-border text-white rounded-2xl p-10 mb-12 shadow-2xl animate-slide-in-up group">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="text-6xl">💼</div>
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold text-white mb-2">
+                Vállalati Szoftverkereső Rendszer
+              </h2>
+              <span className="inline-block bg-white/10 text-gray-300 px-4 py-1 rounded-full text-sm font-medium">
+                Szakdolgozat
+              </span>
+            </div>
+          </div>
+          
+          <p className="text-gray-300 mb-8 leading-relaxed text-lg border-l-4 border-white/20 pl-6">
             Ez az első nagyobb projektem, amely a szakdolgozatom keretében készült, és egy modern, vállalati szoftverkereső rendszer fejlesztését tűzte ki célul. A projekt során teljes körűen végigmentem a szoftverfejlesztés minden fontosabb lépésén, az üzleti igények felmérésétől kezdve az adatbázis tervezésén át a felhasználói felület kialakításáig.
           </p>
-          <ul className="list-none ml-0 space-y-3">
-            <li className="animate-slide-in-up flex items-start">
-              <span className="text-primary mr-3 text-xl">▹</span>
-              <span className="text-gray-300">Szoftverek keresése, szűrése és összehasonlítása.</span>
-            </li>
-            <li className="animate-slide-in-up flex items-start">
-              <span className="text-primary mr-3 text-xl">▹</span>
-              <span className="text-gray-300">Felhasználói értékelések és vélemények megtekintése, beküldése.</span>
-            </li>
-            <li className="animate-slide-in-up flex items-start">
-              <span className="text-primary mr-3 text-xl">▹</span>
-              <span className="text-gray-300">Adminisztrációs felület a szoftverek és kategóriák kezelésére.</span>
-            </li>
-          </ul>
-          <p className="text-gray-300 mt-6 animate-slide-in-right">
-            <a href="http://vallalatiszoftverkereso.runasp.net" target='_blank' className="text-primary hover:text-accent underline italic transition-colors duration-300">
-              A projekt elérhető ezen a linken →
-            </a>
-          </p>
+          
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            <div className="bg-white/5 p-4 rounded-lg">
+              <div className="text-white font-bold mb-2">⚡ Keresés & Szűrés</div>
+              <div className="text-sm text-gray-400">Szoftverek keresése és összehasonlítása</div>
+            </div>
+            <div className="bg-white/5 p-4 rounded-lg">
+              <div className="text-white font-bold mb-2">💬 Értékelések</div>
+              <div className="text-sm text-gray-400">Vélemények megtekintése, beküldése</div>
+            </div>
+            <div className="bg-white/5 p-4 rounded-lg">
+              <div className="text-white font-bold mb-2">🔧 Admin Panel</div>
+              <div className="text-sm text-gray-400">Teljes körű tartalom kezelés</div>
+            </div>
+          </div>
+          
+          <a 
+            href="http://vallalatiszoftverkereso.runasp.net" 
+            target='_blank' 
+            className="inline-flex items-center gap-2 text-white hover:text-gray-300 font-semibold transition-colors duration-300 group"
+          >
+            <span>Projekt megtekintése</span>
+            <span className="transform group-hover:translate-x-2 transition-transform">→</span>
+          </a>
         </div>
         
-        <h1 className="text-4xl font-bold gradient-text mb-8 mt-16 animate-slide-in-left">Jövőbeli Projektötletek</h1>
-        
-        <div className="gradient-card text-white rounded-xl my-6 p-8 shadow-lg animate-slide-in-up hover:shadow-accent/50 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-white animate-slide-in-left mb-3">Online Oktatási Platform</h2>
-          <p className="text-gray-300 mb-4 animate-slide-in-right leading-relaxed">
-            Egy webes alkalmazás, amely lehetővé teszi tanfolyamok létrehozását, kezelést és a tanulók számára való hozzáférést. A rendszer tartalmazhat videókat, teszteket, és tanulási statisztikákat.
-          </p>
+        {/* Future Projects Header */}
+        <div className="mb-12 animate-slide-in-left">
+          <h2 className="text-5xl font-black text-white mb-4">Jövőbeli Projektötletek</h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-white to-transparent"></div>
         </div>
         
-        <div className="gradient-card text-white rounded-xl my-6 p-8 shadow-lg animate-slide-in-up hover:shadow-cyber-blue/50 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-white animate-slide-in-left mb-3">Időmenedzsment Alkalmazás</h2>
-          <p className="text-gray-300 mb-4 animate-slide-in-right leading-relaxed">
-            Egy mobilbarát alkalmazás, amely segíti a felhasználókat napi feladataik és időbeosztásuk kezelésében. Tartalmazhat értesítéseket, statisztikákat és integrációt naptárakkal.
-          </p>
-        </div>
-        
-        <div className="gradient-card text-white rounded-xl my-6 p-8 shadow-lg animate-slide-in-up hover:shadow-purple-500/50 transition-all duration-300">
-          <h2 className="text-2xl font-bold text-white animate-slide-in-left mb-3">E-commerce Weboldal</h2>
-          <p className="text-gray-300 mb-4 animate-slide-in-right leading-relaxed">
-            Egy modern webshop, amely lehetővé teszi termékek böngészését, vásárlását és fizetési integrációt. Tartalmazhat adminisztrációs felületet a termékek kezelésére.
-          </p>
+        {/* Future Projects Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="gradient-card text-white rounded-2xl p-8 animate-slide-in-up">
+            <div className="text-5xl mb-4">🎓</div>
+            <h3 className="text-2xl font-bold text-white mb-4">Online Oktatási Platform</h3>
+            <p className="text-gray-300 leading-relaxed">
+              Tanfolyamok létrehozása, videók, tesztek, és tanulási statisztikák modern környezetben.
+            </p>
+          </div>
+          
+          <div className="gradient-card text-white rounded-2xl p-8 animate-slide-in-up" style={{animationDelay: '0.1s'}}>
+            <div className="text-5xl mb-4">⏰</div>
+            <h3 className="text-2xl font-bold text-white mb-4">Időmenedzsment App</h3>
+            <p className="text-gray-300 leading-relaxed">
+              Mobilbarát alkalmazás feladatok kezelésére értesítésekkel és naptár integrációval.
+            </p>
+          </div>
+          
+          <div className="gradient-card text-white rounded-2xl p-8 animate-slide-in-up" style={{animationDelay: '0.2s'}}>
+            <div className="text-5xl mb-4">🛒</div>
+            <h3 className="text-2xl font-bold text-white mb-4">E-commerce Webshop</h3>
+            <p className="text-gray-300 leading-relaxed">
+              Modern webáruház termékek böngészésével, fizetési integrációval és admin felülettel.
+            </p>
+          </div>
         </div>
       </section>
     </main>

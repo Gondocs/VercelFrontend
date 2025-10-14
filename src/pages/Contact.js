@@ -91,91 +91,155 @@ export default function Contact() {
   };
 
   return (
-    <main className="pt-16 pb-20 relative">
+    <main className="pt-20 pb-20 relative">
       <section
-        className={`mx-auto glow-border rounded-xl shadow-lg p-10 animate-slide-in-up${
-          !isMobile ? " w-[75%]" : "w-[90%]"
-        }`}
+        className={`mx-auto ${!isMobile ? "w-[80%]" : "w-[90%]"}`}
       >
-        <h1
-          className={`font-extrabold gradient-text mb-10 animate-slide-in-left text-center ${
-            !isMobile ? "text-6xl" : "text-4xl"
-          }`}
-        >
-          Kapcsolat
-        </h1>
-        <p className="text-gray-300 mb-6 animate-slide-in-up text-center text-2xl">
-          Elérsz e-mailen:
-          <br />
-          <a
-            href={`mailto:${contactInfo.email}`}
-            className="text-primary hover:text-accent underline animate-slide-in-up transition-colors duration-300"
-          >
-            {contactInfo.email}
-          </a>
-        </p>
-        <div className="w-full flex flex-col items-center">
-          <ContactLinks className="animate-slide-in-up text-xl" />
+        {/* Section Header */}
+        <div className="mb-16 animate-slide-in-left">
+          <h1 className="text-6xl font-black gradient-text mb-4">Kapcsolat</h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-white to-transparent"></div>
         </div>
         
-        <form
-          ref={form}
-          onSubmit={sendEmail}
-          className="flex flex-col gap-4 gradient-card rounded-lg shadow-lg p-8 w-[100%] mx-auto mt-8"
-        >
-          <div>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Név"
-              required
-              className="w-full bg-gray-900/50 text-white border border-primary/30 rounded-lg px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/50 outline-none transition-all duration-300"
-            />
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Left Column - Info */}
+          <div className="animate-slide-in-left">
+            <div className="gradient-card p-10 rounded-2xl h-full">
+              <h2 className="text-3xl font-bold text-white mb-8">Vedd fel a kapcsolatot!</h2>
+              
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="text-3xl">📧</div>
+                  <div>
+                    <div className="text-gray-400 text-sm mb-1">Email</div>
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-white hover:text-gray-300 transition-colors text-lg font-medium"
+                    >
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="section-divider my-6"></div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="text-3xl">🔗</div>
+                  <div className="flex-1">
+                    <div className="text-gray-400 text-sm mb-3">Közösségi média</div>
+                    <div className="flex flex-col gap-3">
+                      <a
+                        href={contactInfo.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 group"
+                      >
+                        <img
+                          src="github-original.svg"
+                          alt="GitHub logo"
+                          width={24}
+                          height={24}
+                          loading="lazy"
+                          className="w-6 h-6 group-hover:scale-110 transition-transform"
+                        />
+                        <span className="font-medium">GitHub</span>
+                      </a>
+                      <a
+                        href={contactInfo.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 group"
+                      >
+                        <img
+                          src="linkedin.svg"
+                          alt="LinkedIn logo"
+                          width={24}
+                          height={24}
+                          loading="lazy"
+                          className="w-6 h-6 group-hover:scale-110 transition-transform"
+                        />
+                        <span className="font-medium">LinkedIn</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email cím"
-              required
-              className="w-full bg-gray-900/50 text-white border border-primary/30 rounded-lg px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/50 outline-none transition-all duration-300"
-            />
-          </div>
-          <div>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Üzenet"
-              rows={4}
-              required
-              className="w-full bg-gray-900/50 text-white border border-primary/30 rounded-lg px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/50 outline-none transition-all duration-300 resize-none"
-            />
-          </div>
-          <div className="flex justify-center my-2">
-            <ReCAPTCHA
-              sitekey={process.env.REACT_APP_RECAPTCHA_SITE}
-              onChange={handleCaptchaChange}
-            />
-          </div>
-          <div>
-            <input
-              type="submit"
-              value="Üzenet küldése"
-              className="w-full bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg px-6 py-3 mt-2 hover:from-accent hover:to-primary transition-all duration-300 cursor-pointer transform hover:scale-105 shadow-lg hover:shadow-primary/50"
-            />
-          </div>
-        </form>
+          
+          {/* Right Column - Form */}
+          <div className="animate-slide-in-right">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="glow-border rounded-2xl p-10 space-y-6"
+            >
+              <h2 className="text-3xl font-bold text-white mb-6">Küldj üzenetet</h2>
+              
+              <div>
+                <label htmlFor="name" className="block text-gray-400 text-sm mb-2 font-medium">Név</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Teljes neved"
+                  required
+                  className="w-full bg-white/5 text-white border border-white/10 rounded-lg px-4 py-3 focus:border-white/30 focus:ring-2 focus:ring-white/10 outline-none transition-all duration-300"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-gray-400 text-sm mb-2 font-medium">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email@example.com"
+                  required
+                  className="w-full bg-white/5 text-white border border-white/10 rounded-lg px-4 py-3 focus:border-white/30 focus:ring-2 focus:ring-white/10 outline-none transition-all duration-300"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-gray-400 text-sm mb-2 font-medium">Üzenet</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Miben segíthetek?"
+                  rows={5}
+                  required
+                  className="w-full bg-white/5 text-white border border-white/10 rounded-lg px-4 py-3 focus:border-white/30 focus:ring-2 focus:ring-white/10 outline-none transition-all duration-300 resize-none"
+                />
+              </div>
+              
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  sitekey={process.env.REACT_APP_RECAPTCHA_SITE}
+                  onChange={handleCaptchaChange}
+                  theme="dark"
+                />
+              </div>
+              
+              <button
+                type="submit"
+                className="w-full bg-white text-black font-bold rounded-lg px-6 py-4 hover:bg-gray-200 transition-all duration-300 cursor-pointer transform hover:scale-[1.02] shadow-lg hover:shadow-white/20"
+              >
+                Üzenet küldése →
+              </button>
+            </form>
 
-        {formStatus === "SUCCESS" && (
-          <p className="text-green-400 mt-6 text-center font-semibold animate-slide-in-up">✓ Üzenet sikeresen elküldve!</p>
-        )}
-        {formStatus === "FAILED" && (
-          <p className="text-red-400 mt-6 text-center font-semibold animate-slide-in-up">
-            ✗ Hiba történt az üzenet küldésekor.
-          </p>
-        )}
+            {formStatus === "SUCCESS" && (
+              <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-center font-semibold animate-slide-in-up">
+                ✓ Üzenet sikeresen elküldve!
+              </div>
+            )}
+            {formStatus === "FAILED" && (
+              <div className="mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center font-semibold animate-slide-in-up">
+                ✗ Hiba történt az üzenet küldésekor.
+              </div>
+            )}
+          </div>
+        </div>
       </section>
     </main>
   );
