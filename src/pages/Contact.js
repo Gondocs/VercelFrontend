@@ -13,7 +13,7 @@ const contactInfo = {
 function ContactLinks({ className }) {
   return (
     <div
-      className={`flex gap-4 bg-black text-white rounded-lg shadow-lg p-4 mt-4 ${
+      className={`flex gap-4 gradient-card rounded-lg shadow-lg p-4 mt-4 ${
         className || ""
       }`.trim()}
     >
@@ -21,7 +21,7 @@ function ContactLinks({ className }) {
         href={contactInfo.github}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 text-white hover:underline"
+        className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110"
       >
         <img
           src="github-original.svg"
@@ -33,12 +33,12 @@ function ContactLinks({ className }) {
         />
         GitHub
       </a>
-      <span>|</span>
+      <span className="text-gray-500">|</span>
       <a
         href={contactInfo.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 text-white hover:underline"
+        className="flex items-center gap-2 text-gray-300 hover:text-white transition-all duration-300 hover:scale-110"
       >
         <img
           src="linkedin.svg"
@@ -91,25 +91,25 @@ export default function Contact() {
   };
 
   return (
-    <main className="pt-16">
+    <main className="pt-16 pb-20 relative">
       <section
-        className={`mx-auto bg-black rounded-xl shadow-lg p-8 animate-slide-in-up${
+        className={`mx-auto glow-border rounded-xl shadow-lg p-10 animate-slide-in-up${
           !isMobile ? " w-[75%]" : "w-[90%]"
         }`}
       >
         <h1
-          className={` font-extrabold text-[#ffffff] mb-10 animate-slide-in-left text-center ${
-            !isMobile ? "text-5xl" : "text-4xl"
+          className={`font-extrabold gradient-text mb-10 animate-slide-in-left text-center ${
+            !isMobile ? "text-6xl" : "text-4xl"
           }`}
         >
           Kapcsolat
         </h1>
-        <p className="text-white mb-4 animate-slide-in-up text-center text-2xl">
+        <p className="text-gray-300 mb-6 animate-slide-in-up text-center text-2xl">
           Elérsz e-mailen:
           <br />
           <a
             href={`mailto:${contactInfo.email}`}
-            className="text-white underline animate-slide-in-up"
+            className="text-primary hover:text-accent underline animate-slide-in-up transition-colors duration-300"
           >
             {contactInfo.email}
           </a>
@@ -117,10 +117,11 @@ export default function Contact() {
         <div className="w-full flex flex-col items-center">
           <ContactLinks className="animate-slide-in-up text-xl" />
         </div>
+        
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col gap-3 bg-black text-white rounded-lg shadow-lg p-6 w-[100%] mx-auto"
+          className="flex flex-col gap-4 gradient-card rounded-lg shadow-lg p-8 w-[100%] mx-auto mt-8"
         >
           <div>
             <input
@@ -129,7 +130,7 @@ export default function Contact() {
               name="name"
               placeholder="Név"
               required
-              className="w-full bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
+              className="w-full bg-gray-900/50 text-white border border-primary/30 rounded-lg px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/50 outline-none transition-all duration-300"
             />
           </div>
           <div>
@@ -139,7 +140,7 @@ export default function Contact() {
               name="email"
               placeholder="Email cím"
               required
-              className="w-full bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
+              className="w-full bg-gray-900/50 text-white border border-primary/30 rounded-lg px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/50 outline-none transition-all duration-300"
             />
           </div>
           <div>
@@ -149,7 +150,7 @@ export default function Contact() {
               placeholder="Üzenet"
               rows={4}
               required
-              className="w-full bg-[#181a1b] text-white border border-[#444] rounded px-4 py-2 focus:border-[#61dafb] outline-none"
+              className="w-full bg-gray-900/50 text-white border border-primary/30 rounded-lg px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/50 outline-none transition-all duration-300 resize-none"
             />
           </div>
           <div className="flex justify-center my-2">
@@ -162,17 +163,17 @@ export default function Contact() {
             <input
               type="submit"
               value="Üzenet küldése"
-              className="w-full bg-[#61dafb] text-[#181a1b] font-bold rounded px-4 py-2 mt-2 hover:bg-[#4ec6e6] transition cursor-pointer"
+              className="w-full bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg px-6 py-3 mt-2 hover:from-accent hover:to-primary transition-all duration-300 cursor-pointer transform hover:scale-105 shadow-lg hover:shadow-primary/50"
             />
           </div>
         </form>
 
         {formStatus === "SUCCESS" && (
-          <p className="text-green-500 mt-4">Üzenet sikeresen elküldve!</p>
+          <p className="text-green-400 mt-6 text-center font-semibold animate-slide-in-up">✓ Üzenet sikeresen elküldve!</p>
         )}
         {formStatus === "FAILED" && (
-          <p className="text-red-500 mt-4">
-            Hiba történt az üzenet küldésekor.
+          <p className="text-red-400 mt-6 text-center font-semibold animate-slide-in-up">
+            ✗ Hiba történt az üzenet küldésekor.
           </p>
         )}
       </section>

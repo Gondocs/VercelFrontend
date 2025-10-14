@@ -9,7 +9,15 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <div className="bg-black min-h-screen text-white transition-colors duration-500">
+    <div className="relative min-h-screen text-white overflow-hidden">
+      {/* Animated background with gradient */}
+      <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 -z-10"></div>
+      
+      {/* Floating shapes for visual interest */}
+      <div className="fixed top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+      <div className="fixed top-40 right-10 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="fixed bottom-20 left-1/3 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
+      
       <Navbar />
 
       <div id="fooldal">

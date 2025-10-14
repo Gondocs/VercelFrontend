@@ -2,19 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+    background-attachment: fixed;
+  }
+}
+
 @layer components {
   .nav-underline {
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
   }
   .nav-underline::after {
     content: '';
     position: absolute;
     left: 50%;
     right: 50%;
-    bottom: 0;
+    bottom: -2px;
     height: 2px;
-    background: white;
+    background: linear-gradient(90deg, #00d4ff, #00ff88, #00ffcc);
     opacity: 0;
     transition: left 0.3s cubic-bezier(0.4,0,0.2,1), right 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s cubic-bezier(0.4,0,0.2,1);
     pointer-events: none;
@@ -30,6 +39,60 @@
     left: 50%;
     right: 50%;
     opacity: 0;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  /* Gradient card */
+  .gradient-card {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 255, 136, 0.08) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .gradient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.5);
+  }
+
+  /* Glowing border effect */
+  .glow-border {
+    position: relative;
+    background: rgba(15, 12, 41, 0.8);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #00d4ff, #00ff88, #00ffcc);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0.8;
+  }
+
+  /* Animated gradient text */
+  .gradient-text {
+    background: linear-gradient(90deg, #00d4ff, #00ff88, #00ffcc, #00d4ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s linear infinite;
   }
 }
 
@@ -70,8 +133,17 @@
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
+
+  /* Floating shapes */
+  .floating-shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+  }
 }
 
+/* Burger menu styles */
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -80,63 +152,53 @@
   top: 36px;
 }
 
-/* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #ffffff;
+  background: linear-gradient(90deg, #00d4ff, #00ff88);
+  height: 15% !important;
+  border-radius: 2px;
 }
 
-/* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #bfbfbf;
+  background: linear-gradient(90deg, #00ff88, #00ffcc);
 }
 
-/* Position and sizing of clickable cross button */
 .bm-cross-button {
   height: 24px;
   width: 24px;
 }
 
-/* Color/shape of close button cross */
 .bm-cross {
   background: #ffffff;
 }
 
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
   top: 0;
 }
 
-/* General sidebar styles */
 .bm-menu {
-  background: #000000;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  border-left: #ffffff 2px solid;
+  border-left: 2px solid;
+  border-image: linear-gradient(180deg, #00d4ff, #00ff88) 1;
 }
 
-/* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #373a47;
 }
 
-/* Wrapper for item list */
 .bm-item-list {
   color: #ffffff;
   padding: 0.8em;
-
 }
 
-/* Individual item */
 .bm-item {
   display: inline-block;
 }
 
-/* Styling of overlay */
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
 }

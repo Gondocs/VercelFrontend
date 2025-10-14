@@ -15,43 +15,47 @@ export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 810 });
 
   return (
-    <main className="py-12 bg-gradient-to-b from-black to-black min-h-screen">
+    <main className="py-12 min-h-screen relative">
       <section
-        className={`mx-auto bg-black rounded-2xl shadow-2xl p-10 mb-10 border border-black animate-slide-in-up${
+        className={`mx-auto glow-border p-10 mb-10 animate-slide-in-up${
           !isMobile ? " w-[75%]" : "w-[95%]"
         }`}
       >
-        <h1 className={`text-5xl font-extrabold text-white mb-6 text-center drop-shadow-lg animate-slide-in-left ${
-          !isMobile ? "text-5xl" : "text-2xl"
+        <h1 className={`font-extrabold gradient-text mb-6 text-center drop-shadow-lg animate-slide-in-left ${
+          !isMobile ? "text-6xl" : "text-3xl"
         }`}>
           Üdvözöllek a személyes oldalamon!
         </h1>
-        <p className="text-xl text-white text-center mb-2 animate-slide-in-right">
+        <p className="text-xl text-gray-300 text-center mb-2 animate-slide-in-right">
           Fedezd fel a munkáimat és tapasztalataimat.
         </p>
       </section>
+      
       <section
-        className={`mx-auto bg-black rounded-2xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-10 border border-black animate-slide-in-up${
+        className={`mx-auto gradient-card rounded-2xl shadow-2xl p-10 flex flex-col md:flex-row items-center gap-10 animate-slide-in-up${
           !isMobile ? " w-[75%]" : "w-[95%]"
         }`}
       >
-        {" "}
-        <img
-          src={profile.image}
-          alt="Profile"
-          width={224}
-          height={224}
-          loading="eager"
-          className="w-56 h-56 rounded-full shadow-2xl border-4 border-black object-cover bg-black transition-transform duration-300 hover:scale-105 animate-slide-in-left"
-        />
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-2xl opacity-50 animate-pulse-slow"></div>
+          <img
+            src={profile.image}
+            alt="Profile"
+            width={224}
+            height={224}
+            loading="eager"
+            className="relative w-56 h-56 rounded-full shadow-2xl border-4 border-primary/50 object-cover transition-transform duration-300 hover:scale-110 animate-slide-in-left"
+          />
+        </div>
+        
         <div className="flex-1 text-center md:text-left animate-slide-in-right">
-          <h3 className="text-3xl font-extrabold text-white mb-2 drop-shadow">
+          <h3 className="text-4xl font-extrabold text-white mb-2 drop-shadow-lg">
             {profile.name}
           </h3>
-          <h4 className="text-xl text-white mb-2 font-semibold">
+          <h4 className="text-2xl bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent mb-4 font-semibold">
             {profile.title}
           </h4>
-          <p className="text-white leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-lg">
             {profile.description}
           </p>
         </div>

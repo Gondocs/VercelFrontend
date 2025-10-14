@@ -97,12 +97,13 @@ function Navbar() {
   );
 
   return (
-    <nav className="flex items-center justify-between px-10 py-2 bg-black shadow-lg border-b-2 border-white sticky top-0 z-50">
+    <nav className="flex items-center justify-between px-10 py-2 glass backdrop-blur-md bg-opacity-10 shadow-xl sticky top-0 z-50 border-b border-cyan-500/30">
       <a href="#fooldal" className={`flex-shrink-0${!isMobile ? ' pl-16' : ''}`}>
         <img
           src="/GR_logo.webp"
           alt="Logo"
           style={{ height: "80px", width: "auto" }}
+          className="transition-transform hover:scale-110 duration-300"
         />
       </a>
       {isMobile ? (

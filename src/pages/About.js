@@ -121,19 +121,20 @@ const about = {
 export default function About() {
   useScrollAnimations();
   return (
-    <main className="py-16">
-      <section className="w-[75%] mx-auto bg-black"> 
-        <h1 className="text-3xl font-bold text-[#ffffff] mb-2 animate-slide-in-left">
+    <main className="py-16 relative">
+      <section className="w-[75%] mx-auto"> 
+        <h1 className="text-5xl font-bold gradient-text mb-8 animate-slide-in-left">
           Rólam
         </h1>
-        <div className="bg-black text-white rounded-xl my-4 p-6 shadow-lg">
-          <p className="text-white mb-4 animate-slide-in-right">{about.bio}</p>
-          <h2 className="text-2xl font-semibold mt-20 mb-2">Frontend</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+        <div className="glow-border text-white rounded-xl my-4 p-8 shadow-lg">
+          <p className="text-gray-300 text-lg mb-8 animate-slide-in-right leading-relaxed">{about.bio}</p>
+          
+          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Frontend</h2>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
             {about.frontend.map((skill) => (
               <li
                 key={skill.name}
-                className="flex flex-col items-center bg-black text-white rounded-md py-3 px-2 animate-slide-in-up shadow"
+                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-primary/50 transition-all duration-300"
               >
                 <a
                   href={skill.link}
@@ -141,25 +142,29 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group"
                 >
-                  <img
-                    src={skill.logo}
-                    alt={skill.name + " logo"}
-                    width={40}
-                    height={40}
-                    loading="lazy"
-                    className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
-                  />
-                  <span className="text-sm text-center">{skill.name}</span>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img
+                      src={skill.logo}
+                      alt={skill.name + " logo"}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
+                    />
+                  </div>
+                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{skill.name}</span>
                 </a>
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl font-semibold mt-20 mb-2">Backend</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+          
+          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Backend</h2>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
             {about.backend.map((skill) => (
               <li
                 key={skill.name}
-                className="flex flex-col items-center bg-black text-white rounded-md py-3 px-2 animate-slide-in-up shadow"
+                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-accent/50 transition-all duration-300"
               >
                 <a
                   href={skill.link}
@@ -167,25 +172,29 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group"
                 >
-                  <img
-                    src={skill.logo}
-                    alt={skill.name + " logo"}
-                    width={40}
-                    height={40}
-                    loading="lazy"
-                    className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
-                  />
-                  <span className="text-sm text-center">{skill.name}</span>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img
+                      src={skill.logo}
+                      alt={skill.name + " logo"}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
+                    />
+                  </div>
+                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{skill.name}</span>
                 </a>
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl font-semibold mt-20 mb-2">Eszközök</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+          
+          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Eszközök</h2>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
             {about.tools.map((tool) => (
               <li
                 key={tool.name}
-                className="flex flex-col items-center bg-black text-white rounded-md py-3 px-2 animate-slide-in-up shadow"
+                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-cyber-blue/50 transition-all duration-300"
               >
                 <a
                   href={tool.link}
@@ -193,25 +202,29 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group"
                 >
-                  <img
-                    src={tool.logo}
-                    alt={tool.name + " logo"}
-                    width={40}
-                    height={40}
-                    loading="lazy"
-                    className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
-                  />
-                  <span className="text-sm text-center">{tool.name}</span>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/20 to-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img
+                      src={tool.logo}
+                      alt={tool.name + " logo"}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
+                    />
+                  </div>
+                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{tool.name}</span>
                 </a>
               </li>
             ))}
           </ul>
-          <h2 className="text-2xl font-semibold mt-20 mb-2">Adat & Analitika</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+          
+          <h2 className="text-3xl font-semibold mt-12 mb-6 bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Adat & Analitika</h2>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-6">
             {about.data.map((item) => (
               <li
                 key={item.name}
-                className="flex flex-col items-center bg-black text-white rounded-md py-3 px-2 animate-slide-in-up shadow"
+                className="flex flex-col items-center gradient-card rounded-lg py-4 px-3 animate-slide-in-up shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
               >
                 <a
                   href={item.link}
@@ -219,15 +232,18 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center group"
                 >
-                  <img
-                    src={item.logo}
-                    alt={item.name + " logo"}
-                    width={40}
-                    height={40}
-                    loading="lazy"
-                    className="w-10 h-10 mb-2 transition-transform group-hover:scale-110"
-                  />
-                  <span className="text-sm text-center">{item.name}</span>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img
+                      src={item.logo}
+                      alt={item.name + " logo"}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      className="relative w-12 h-12 mb-3 transition-transform group-hover:scale-125 group-hover:rotate-6 duration-300"
+                    />
+                  </div>
+                  <span className="text-sm text-center text-gray-300 group-hover:text-white transition-colors">{item.name}</span>
                 </a>
               </li>
             ))}
