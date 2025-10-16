@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,6 +41,16 @@
     right: 50%;
     opacity: 0;
   }
+
+  /* Prevent overlays/decorative elements from blocking pointer events - project-specific */
+.glow-border::before,
+.gradient-card::before,
+.floating-shape,
+.background-overlay,
+.hero-noise,
+.hero-stars {
+  pointer-events: none !important;
+}
 
   /* Glass morphism effect */
   .glass {
