@@ -85,18 +85,9 @@ export default function Contact() {
                         href={contactInfo.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 group"
-                      >
-                        <img
-                          src="github-white.svg"
-                          alt="GitHub logó (fehér)"
-                          width={24}
-                          height={24}
-                          loading="lazy"
-                          className="w-6 h-6 group-hover:scale-110 transition-transform"
-                          style={{ filter: 'brightness(1000%)' }}
-                        />
-                        <span className="font-medium">GitHub</span>
+                        className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 group underline underline-offset-4 decoration-white"
+                        style={{fontWeight: 600, fontSize: '1.1rem'}}>
+                        <span className="font-medium">GitHub →</span>
                       </a>
                       <a
                         href={contactInfo.linkedin}
@@ -122,11 +113,12 @@ export default function Contact() {
           </div>
           
           {/* Right Column - Form */}
-          <div className="animate-slide-in-right">
+          <div className="animate-slide-in-right relative z-20">
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="glow-border rounded-2xl p-10 space-y-6"
+              className="glow-border rounded-2xl p-10 space-y-6 bg-black/80"
+              style={{zIndex: 20, position: 'relative'}}
             >
               <h2 className="text-3xl font-bold text-white mb-6">Küldj üzenetet</h2>
               <p className="text-gray-400 mb-4">Az alábbi űrlap kitöltésével közvetlenül üzenhetsz nekem. Minden mező kitöltése kötelező.</p>
