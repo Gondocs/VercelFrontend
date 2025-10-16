@@ -45,12 +45,13 @@ export default function Contact() {
   };
 
   return (
-    <main className="pt-20 pb-20 relative">
+    <main className="pt-20 pb-20 relative z-10">
       <section className="max-w-6xl mx-auto px-6">
         {/* Section Header - Centered */}
         <div className="text-center mb-16 animate-slide-in-down">
           <h1 className="text-6xl font-black gradient-text mb-6">Kapcsolat</h1>
           <div className="h-1 w-24 bg-gradient-to-r from-transparent via-white to-transparent mx-auto"></div>
+          <p className="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">Lépj velem kapcsolatba az alábbi űrlapon keresztül, vagy írj közvetlenül emailben. A csillaggal jelölt mezők kitöltése kötelező. Az üzenet elküldéséhez igazold, hogy nem vagy robot (reCAPTCHA).</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -87,12 +88,13 @@ export default function Contact() {
                         className="flex items-center gap-3 text-gray-300 hover:text-white transition-all duration-300 group"
                       >
                         <img
-                          src="github-original.svg"
-                          alt="GitHub logo"
+                          src="github-white.svg"
+                          alt="GitHub logó (fehér)"
                           width={24}
                           height={24}
                           loading="lazy"
                           className="w-6 h-6 group-hover:scale-110 transition-transform"
+                          style={{ filter: 'brightness(1000%)' }}
                         />
                         <span className="font-medium">GitHub</span>
                       </a>
@@ -127,9 +129,10 @@ export default function Contact() {
               className="glow-border rounded-2xl p-10 space-y-6"
             >
               <h2 className="text-3xl font-bold text-white mb-6">Küldj üzenetet</h2>
+              <p className="text-gray-400 mb-4">Az alábbi űrlap kitöltésével közvetlenül üzenhetsz nekem. Minden mező kitöltése kötelező.</p>
               
               <div>
-                <label htmlFor="name" className="block text-gray-400 text-sm mb-2 font-medium">Név</label>
+                <label htmlFor="name" className="block text-gray-400 text-sm mb-2 font-medium">Név <span className="text-red-400">*</span></label>
                 <input
                   type="text"
                   id="name"
@@ -141,7 +144,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-gray-400 text-sm mb-2 font-medium">Email</label>
+                <label htmlFor="email" className="block text-gray-400 text-sm mb-2 font-medium">Email <span className="text-red-400">*</span></label>
                 <input
                   type="email"
                   id="email"
@@ -153,7 +156,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-gray-400 text-sm mb-2 font-medium">Üzenet</label>
+                <label htmlFor="message" className="block text-gray-400 text-sm mb-2 font-medium">Üzenet <span className="text-red-400">*</span></label>
                 <textarea
                   id="message"
                   name="message"
@@ -164,7 +167,7 @@ export default function Contact() {
                 />
               </div>
               
-              <div className="flex justify-center">
+              <div className="flex justify-center z-20">
                 <ReCAPTCHA
                   sitekey={process.env.REACT_APP_RECAPTCHA_SITE}
                   onChange={handleCaptchaChange}
@@ -175,19 +178,20 @@ export default function Contact() {
               <button
                 type="submit"
                 className="w-full bg-white text-black font-bold rounded-lg px-6 py-4 hover:bg-gray-200 transition-all duration-300 cursor-pointer transform hover:scale-[1.02] shadow-lg hover:shadow-white/20"
+                aria-label="Üzenet elküldése gombra kattintva küldheted el az űrlapot"
               >
-                Üzenet küldése →
+                Üzenet elküldése →
               </button>
             </form>
 
             {formStatus === "SUCCESS" && (
               <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-center font-semibold animate-slide-in-up">
-                ✓ Üzenet sikeresen elküldve!
+                ✓ Az üzeneted sikeresen elküldve! Hamarosan felveszem veled a kapcsolatot.
               </div>
             )}
             {formStatus === "FAILED" && (
               <div className="mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center font-semibold animate-slide-in-up">
-                ✗ Hiba történt az üzenet küldésekor.
+                ✗ Hiba történt az üzenet küldésekor. Kérlek, próbáld meg újra később vagy írj közvetlenül emailben.
               </div>
             )}
           </div>
